@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff3f1ed"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <LinearLayout
+        style="@style/add_student_item"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="学员名称" />
+
+        <EditText
+            android:id="@+id/edit_name"
+            style="@style/add_student_editText"
+            android:hint="请输入学员名称" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="手机号" />
+
+        <EditText
+            android:id="@+id/edit_phone"
+            style="@style/add_student_editText"
+            android:hint="请填写学员报名时的手机号"
+            android:maxLength="12"
+            android:phoneNumber="true" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="收费学员" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/radio_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/check_fee"
+                android:text="  是"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+
+            <RadioButton
+                android:id="@+id/radio_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:button="@drawable/check_fee"
+                android:text="  否"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="备注" />
+
+        <EditText
+            android:id="@+id/edit_remark"
+            style="@style/add_student_editText"
+            android:hint="" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_red"
+        android:text="添加"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_18" />
+
+</LinearLayout>

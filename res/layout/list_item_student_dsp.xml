@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/bg_white"
+    android:orientation="horizontal"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp" >
+
+    <TextView
+        android:id="@+id/text_1"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:paddingTop="5dp"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_16" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp" >
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/bg_green" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/list_item_student_green_point" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/text_2"
+            style="@style/layout.w.w"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_16" />
+
+        <TextView
+            android:id="@+id/text_3"
+            style="@style/layout.w.w"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_14" />
+    </LinearLayout>
+
+</LinearLayout>

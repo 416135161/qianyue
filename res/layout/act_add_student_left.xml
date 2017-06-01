@@ -1,0 +1,118 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <LinearLayout
+        style="@style/add_student_item"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="学员名称" />
+
+        <EditText
+            style="@style/add_student_editText"
+            android:hint="请输入学员名称" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="身份证号" />
+
+        <EditText
+            style="@style/add_student_editText"
+            android:hint="请输入身份证" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="报考车型" />
+
+        <TextView
+            android:id="@+id/text_model"
+            style="@style/regist_dsp_editText"
+            android:drawableRight="@drawable/image_arrow_right"
+            android:text="C1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="所属驾校" />
+
+        <EditText
+            style="@style/regist_dsp_editText"
+            android:hint="请输入驾校名称" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="联系电话" />
+
+        <EditText
+            style="@style/regist_dsp_editText"
+            android:hint="请输入联系方式" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="报名时间" />
+
+        <TextView
+            android:id="@+id/text_time"
+            style="@style/regist_dsp_editText"
+            android:drawableRight="@drawable/image_arrow_right"
+            android:text="C1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="报名方式" />
+
+        <TextView
+            android:id="@+id/text_type"
+            style="@style/regist_dsp_editText"
+            android:drawableRight="@drawable/image_arrow_right"
+            android:text="C1" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/add_student_item" >
+
+        <TextView
+            style="@style/add_student_text"
+            android:text="备注" />
+
+        <EditText
+            style="@style/regist_dsp_editText"
+            android:hint="" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_red"
+        android:text="保存"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_18" />
+
+</LinearLayout>

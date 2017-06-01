@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff3f1ed"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <FrameLayout style="@style/layout.m.m" >
+
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+        </com.baoyz.swipemenulistview.SwipeMenuListView>
+
+        <TextView
+            android:id="@+id/text_no_data"
+            style="@style/layout.w.w"
+            android:layout_gravity="center"
+            android:drawableTop="@drawable/no_message_tip"
+            android:text="目前没有消息"
+            android:gravity="center_horizontal"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_18"
+            android:visibility="visible" />
+    </FrameLayout>
+
+</LinearLayout>

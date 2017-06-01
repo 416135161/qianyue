@@ -1,0 +1,109 @@
+<!-- 基础的style -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="layout"></style>
+
+    <style name="layout.m">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="layout.w">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="layout.m.w">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layout.m.m">
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="layout.w.m">
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="layout.w.w">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="common_edit_text">
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">@dimen/margin_5</item>
+        <item name="android:paddingRight">@dimen/margin_5</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:background">@drawable/bg_edit</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="common_edit_text_checked" parent="@style/common_edit_text">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:background">@drawable/bg_edit_checked</item>
+    </style>
+
+    <style name="common_button_blue">
+        <item name="android:padding">0dp</item>
+        <item name="android:textSize">@dimen/text_21</item>
+        <item name="android:textColor">@color/btn_blue</item>
+        <item name="android:text">确　定</item>
+        <item name="android:background">@drawable/btn_blue_selector</item>
+    </style>
+
+    <style name="task_button_blue">
+        <item name="android:textSize">@dimen/text_21</item>
+        <item name="android:textColor">@color/btn_blue</item>
+        <item name="android:background">@drawable/btn_blue_selector</item>
+    </style>
+
+    <style name="common_button_red">
+        <item name="android:textSize">@dimen/text_21</item>
+        <item name="android:textColor">@color/btn_red</item>
+        <item name="android:background">@drawable/btn_red_selector</item>
+    </style>
+
+    <style name="common_button_green">
+        <item name="android:textSize">@dimen/text_21</item>
+        <item name="android:textColor">@color/btn_green</item>
+        <item name="android:background">@drawable/btn_green_selector</item>
+    </style>
+
+    <style name="common_button_white">
+        <item name="android:padding">0dp</item>
+        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:textColor">@color/btn_white</item>
+        <item name="android:text">确　定</item>
+        <item name="android:background">@drawable/btn_white_selector</item>
+    </style>
+
+    <style name="number_key">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">40dp</item>
+    </style>
+
+    <style name="text_18" parent="@style/layout.w.w">
+        <item name="android:textSize">@dimen/text_18</item>
+    </style>
+    
+
+    <style name="text_18.blue">
+        <item name="android:textColor">@color/text_blue</item>
+    </style>
+
+    <style name="text_18.black">
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+    
+     <style name="text_21" parent="@style/layout.w.w">
+        <item name="android:textSize">@dimen/text_21</item>
+    </style>
+    
+      <style name="text_21.black">
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+
+</resources>

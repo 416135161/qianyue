@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff5f5f5"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@color/bg_white" >
+
+        <com.internet.view.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/image_header"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/user_tip"
+            app:border_color="#40ac6e2f"
+            app:border_width="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="右转弯"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <ImageView
+            android:id="@+id/view_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/main_tip" />
+
+        <TextView
+            android:id="@+id/text_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/main_message_tip_bg"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_14"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_site"
+            style="@style/mian_item_style"
+            android:drawableTop="@drawable/main_item_site"
+            android:text="\n科目二" />
+
+        <TextView
+            android:id="@+id/text_road"
+            style="@style/mian_item_style"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:drawableTop="@drawable/main_item_road"
+            android:text="\n科目三" />
+
+        <TextView
+            android:id="@+id/text_escort"
+            style="@style/mian_item_style"
+            android:drawableTop="@drawable/main_item_escort"
+            android:text="\n陪练复训" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_make_order"
+            style="@style/mian_item_style"
+            android:drawableTop="@drawable/main_item_1"
+            android:text="\n预约订单" />
+
+        <TextView
+            android:id="@+id/text_my_student"
+            style="@style/mian_item_style"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:drawableTop="@drawable/main_item_3"
+            android:text="\n我的学员" />
+
+        <TextView
+            android:id="@+id/text_my_income"
+            style="@style/mian_item_style"
+            android:drawableTop="@drawable/main_item_4"
+            android:text="\n我的收入" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#d2d2d2" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="@color/bg_white"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <com.internet.view.MainBottomItemView_
+            android:id="@+id/text_bottom_home"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <com.internet.view.MainBottomItemView_
+            android:id="@+id/text_bottom_order"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <com.internet.view.MainBottomItemView_
+            android:id="@+id/text_bottom_exam"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <com.internet.view.MainBottomItemView_
+            android:id="@+id/text_bottom_income"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>

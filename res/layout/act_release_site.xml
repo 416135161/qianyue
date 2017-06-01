@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <LinearLayout
+        android:id="@+id/header_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/bg_white"
+        android:orientation="horizontal" >
+
+        <com.internet.view.ReleaseSiteDateItemView_
+            android:id="@+id/date_item1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.internet.view.ReleaseSiteDateItemView_
+            android:id="@+id/date_item2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.internet.view.ReleaseSiteDateItemView_
+            android:id="@+id/date_item3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.internet.view.ReleaseSiteDateItemView_
+            android:id="@+id/date_item4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.internet.view.ReleaseSiteDateItemView_
+            android:id="@+id/date_item5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.internet.view.ReleaseSiteDateItemView_
+            android:id="@+id/date_item6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.internet.view.ReleaseSiteDateItemView_
+            android:id="@+id/date_item7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+        android:id="@+id/view_select_site"
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="场地选择"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            android:id="@+id/text_site"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="请选择"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_arrow_right" />
+    </LinearLayout>
+        <LinearLayout style="@style/my_info_center_item" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约时段"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="(点击“+”号添加时段)"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_16" />
+
+            <ImageView
+                android:id="@+id/image_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_add_date" />
+        </LinearLayout>
+
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:background="@color/bg_white"
+            android:divider="@color/bg_main"
+            android:dividerHeight="1dp" >
+        </com.baoyz.swipemenulistview.SwipeMenuListView>
+    </LinearLayout>
+
+    
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="复制数据"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="点击后将复制最后一次场地训练数据"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_16" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_copy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_green"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:text="复制"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_18" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <LinearLayout
+           android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关闭预约"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/text_repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关闭后，当天将不可预约"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_16" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/mSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingRight="30dp"
+            android:button="@drawable/one_key_close_check" 
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/bg_white"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="@dimen/margin_10"
+        android:paddingRight="@dimen/margin_10"
+        android:paddingTop="8dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提示："
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.每次发布只能最多发布一周"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_16" />
+    </LinearLayout>
+
+</LinearLayout>

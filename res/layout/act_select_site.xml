@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_main"
+        android:orientation="vertical" >
+
+        <include layout="@layout/layout_header_view" />
+
+        <LinearLayout
+            android:id="@+id/view_search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@drawable/btn_white"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/search_student" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="搜索"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_16" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:divider="@color/bg_color"
+            android:dividerHeight="0.5dp"
+            android:listSelector="#00000000"
+            android:scrollbars="none" />
+
+        <Button
+            android:id="@+id/tv_ok"
+            style="@style/btn_save"
+            android:text="确认选择" />
+    </LinearLayout>
+
+    <com.internet.view.SearchSiteView_
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_black_e0"
+        android:orientation="vertical"
+        android:visibility="gone" >
+    </com.internet.view.SearchSiteView_>
+
+</FrameLayout>

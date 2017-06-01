@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <LinearLayout
+        android:id="@+id/view_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <EditText
+            android:id="@+id/edit_search"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_white"
+            android:drawableLeft="@drawable/search_student"
+            android:hint="搜索"
+            android:paddingLeft="10dp"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_16" />
+
+        <TextView
+            android:id="@+id/text_search"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_red"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="搜索"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_18" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/mListView"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:divider="@color/bg_empty"
+        android:dividerHeight="15dp" >
+    </ListView>
+
+</LinearLayout>

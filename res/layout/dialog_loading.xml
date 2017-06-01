@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout.m.m"
+    android:gravity="center" >
+
+    <LinearLayout
+        style="@style/layout.m.w"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:background="#6f000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/mLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@anim/loading" />
+
+        <TextView
+            android:id="@+id/text_tip"
+            style="@style/layout.w.w"
+            android:layout_marginTop="20dp"
+            android:text="数据提交中..."
+            android:textColor="@color/text_white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <LinearLayout
+        style="@style/layout.m.w"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <Button
+            android:id="@+id/btn_site"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_red"
+            android:text="场地训练"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_18" />
+
+        <Button
+            android:id="@+id/btn_road"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_red"
+            android:text="道路训练"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_18" />
+
+        <Button
+            android:id="@+id/btn_escort"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_red"
+            android:text="陪驾"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_18" />
+    </LinearLayout>
+
+</LinearLayout>

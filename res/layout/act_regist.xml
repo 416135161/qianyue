@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff3f1ed"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/bg_header"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <TextView
+            android:id="@+id/text_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="取消"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="注册"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_18" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <EditText
+            android:id="@+id/mEdit_mobile"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_white"
+            android:hint="输入手机号"
+            android:paddingLeft="15dp"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_18" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/mEdit_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/btn_white"
+                android:hint="输入验证码"
+                android:inputType="number"
+                android:paddingLeft="15dp"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_18" />
+
+            <Button
+                android:id="@+id/btn_acquire"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/btn_red"
+                android:text=" 获取验证码"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_18" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/mEdit_pwd"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_white"
+            android:hint="输入密码"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_18" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+           
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/agree_protocol_check"
+                android:checked="true" />
+
+            <TextView
+                android:id="@+id/text_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="我同意《右转弯教练服务协议》"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_red"
+            android:text="下一步"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_18" />
+    </LinearLayout>
+
+</LinearLayout>

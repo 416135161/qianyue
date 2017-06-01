@@ -1,0 +1,30 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <TextView
+        android:id="@+id/mText1"
+        style="@style/layout.w.w"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_18" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/mText2"
+        style="@style/layout.w.w"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:textColor="@color/text_red"
+        android:textSize="@dimen/text_18" />
+
+    <TextView
+        android:id="@+id/mText3"
+        style="@style/layout.w.w"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_18" />
+
+    <ImageView
+        style="@style/layout.w.w"
+        android:src="@drawable/image_arrow_right" />
+
+</merge>

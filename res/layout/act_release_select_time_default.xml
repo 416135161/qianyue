@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/bg_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="亲，当前是系统设置时间不可修改"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/text_16" />
+
+    <LinearLayout style="@style/select_time_default_item" >
+
+        <TextView
+            android:id="@+id/text1"
+            style="@style/select_time_default_item_text"
+            android:text="08:00～09:00" />
+
+        <CheckBox
+            android:id="@+id/check1"
+            style="@style/layout.w.w"
+            android:button="@drawable/select_time_check" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/select_time_default_item" >
+
+        <TextView
+            android:id="@+id/text2"
+            style="@style/select_time_default_item_text"
+            android:text="08:00～09:00" />
+
+        <CheckBox
+            android:id="@+id/check2"
+            style="@style/layout.w.w"
+            android:button="@drawable/select_time_check" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/select_time_default_item" >
+
+        <TextView
+            android:id="@+id/text3"
+            style="@style/select_time_default_item_text"
+            android:text="08:00～09:00" />
+
+        <CheckBox
+            android:id="@+id/check3"
+            style="@style/layout.w.w"
+            android:button="@drawable/select_time_check" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/select_time_default_item" >
+
+        <TextView
+            android:id="@+id/text4"
+            style="@style/select_time_default_item_text"
+            android:text="08:00～09:00" />
+
+        <CheckBox
+            android:id="@+id/check4"
+            style="@style/layout.w.w"
+            android:button="@drawable/select_time_check" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/select_time_default_item" >
+
+        <TextView
+            android:id="@+id/text5"
+            style="@style/select_time_default_item_text"
+            android:text="08:00～09:00" />
+
+        <CheckBox
+            android:id="@+id/check5"
+            style="@style/layout.w.w"
+            android:button="@drawable/select_time_check" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/select_time_default_item" >
+
+        <TextView
+            android:id="@+id/text6"
+            style="@style/select_time_default_item_text"
+            android:text="08:00～09:00" />
+
+        <CheckBox
+            android:id="@+id/check6"
+            style="@style/layout.w.w"
+            android:button="@drawable/select_time_check" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="20dp" >
+
+        <TextView
+            style="@style/layout.w.w"
+            android:text="平均价格"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <EditText
+            android:id="@+id/edit_price"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@color/bg_empty"
+            android:hint="请输入金额"
+            android:inputType="number"
+            android:textColor="@color/text_black"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            style="@style/layout.w.w"
+            android:layout_marginLeft="15dp"
+            android:text="元"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/btn_save"
+        android:layout_marginTop="40dp"
+        android:text="发布" />
+
+</LinearLayout>

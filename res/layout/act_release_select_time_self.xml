@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="40dp" >
+
+        <TextView
+            style="@style/layout.w.w"
+            android:text="选择时段"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            android:id="@+id/time_from"
+            style="@style/layout.w.w"
+            android:layout_marginLeft="20dp"
+            android:text="9:00"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            style="@style/layout.w.w"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="~"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            android:id="@+id/time_to"
+            style="@style/layout.w.w"
+            android:text="10:00"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="20dp" >
+
+        <TextView
+            style="@style/layout.w.w"
+            android:text="预约价格"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <EditText
+            android:id="@+id/edit_price"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@color/bg_empty"
+            android:hint="请输入金额"
+            android:inputType="number"
+            android:textColor="@color/text_black"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            style="@style/layout.w.w"
+            android:layout_marginLeft="15dp"
+            android:text="元"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/btn_save"
+        android:layout_marginTop="40dp" />
+
+</LinearLayout>

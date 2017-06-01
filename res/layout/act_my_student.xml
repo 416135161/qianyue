@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_main"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            android:background="@color/bg_header"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+
+            <ImageView
+                android:id="@+id/image_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_back" 
+                android:paddingRight="20dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/view_title_left"
+                    style="@style/layout.w.m"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/text_title_left"
+                        android:layout_width="110dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="右转弯学员"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_18" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/bg_white"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_title_right"
+                    style="@style/layout.w.m"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/text_title_right"
+                        android:layout_width="110dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="录入学员"
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_18" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/bg_white"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/image_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_add" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@drawable/btn_white"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/search_student" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="搜索"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_16" />
+        </LinearLayout>
+
+        <FrameLayout style="@style/layout.m.m" >
+
+            <com.baoyz.swipemenulistview.SwipeMenuListView
+                android:id="@+id/mListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:divider="@color/bg_empty"
+                android:dividerHeight="1dp" >
+            </com.baoyz.swipemenulistview.SwipeMenuListView>
+
+            <TextView
+                android:id="@+id/text_no_data"
+                style="@style/layout.w.w"
+                android:layout_gravity="center"
+                android:layout_marginTop="-20dp"
+                android:drawableTop="@drawable/no_student_tip"
+                android:gravity="center_horizontal"
+                android:text="目前没有学员"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_18"
+                android:visibility="invisible" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.internet.view.SearchStudentView_
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_black_e0"
+        android:orientation="vertical"
+        android:visibility="gone" >
+    </com.internet.view.SearchStudentView_>
+
+</FrameLayout>

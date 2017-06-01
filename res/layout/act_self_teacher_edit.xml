@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="15dp" >
+
+        <TextView
+            style="@style/teacher_text"
+            android:text="姓名" />
+
+        <EditText
+            android:id="@+id/text_name"
+            style="@style/teacher_editText"
+            android:hint="请填写身份证上姓名" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/teacher_text"
+            android:text="身份证" />
+
+        <EditText
+            android:id="@+id/text_no"
+            style="@style/teacher_editText"
+            android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="请填写身份证号"
+            android:maxLength="18" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/teacher_text"
+            android:text="车型" />
+
+        <Spinner
+            android:id="@+id/mCarType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@color/bg_empty" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/teacher_text"
+            android:text="车牌号" />
+
+        <TextView
+            style="@style/layout.w.w"
+            android:layout_marginLeft="10dp"
+            android:text="川A"
+            android:textColor="@color/text_black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/text_carNo"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@color/bg_empty"
+            android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="xxxx"
+            android:maxLength="4"
+            android:textColor="@color/text_black"
+            android:textSize="18sp" />
+
+        <TextView
+            style="@style/layout.w.w"
+            android:text="学"
+            android:textColor="@color/text_black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="证件信息"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal" >
+
+        <com.internet.view.PaperItemView_
+            android:id="@+id/paper1"
+            style="@style/paper_item" />
+
+        <com.internet.view.PaperItemView_
+            android:id="@+id/paper2"
+            style="@style/paper_item"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp" />
+
+        <com.internet.view.PaperItemView_
+            android:id="@+id/paper3"
+            style="@style/paper_item" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal" >
+
+        <com.internet.view.PaperItemView_
+            android:id="@+id/paper4"
+            style="@style/paper_item"
+            android:drawableTop="@drawable/main_item_4" />
+
+        <com.internet.view.PaperItemView_
+            android:id="@+id/paper5"
+            style="@style/paper_item"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp" />
+
+        <com.internet.view.PaperItemView_
+            android:id="@+id/paper6"
+            style="@style/paper_item" />
+    </LinearLayout>
+
+</LinearLayout>

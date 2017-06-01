@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff3f1ed"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <EditText
+        android:id="@+id/mEdit"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/bg_white"
+        android:gravity="top"
+        android:hint="请简要填写您要反馈的问题或意见，我们将在第一时间给您回复！"
+        android:padding="10dp"
+        android:textColor="@color/text_black"
+        android:textColorHint="@color/text_gray"
+        android:textSize="@dimen/text_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/btn_save"
+        android:text="提交反馈" />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:gravity="center_horizontal"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="日"
+        android:textSize="14sp"
+        android:textColor="@color/text_gray" />
+
+    <CheckBox
+         android:id="@+id/cb_day"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+         android:layout_marginTop="5dp"
+        android:text="10"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:button="@null"
+        android:checked="true"
+        android:background="@drawable/calendar_item_selector"
+        android:textColor="@color/calendar_item_text_selector" />
+
+    <View
+        android:id="@+id/point"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+         android:layout_marginTop="5dp"
+        android:background="@drawable/point_green" />
+
+    <TextView
+          android:id="@+id/tv_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="今天"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:textColor="@color/text_orange" />
+
+</LinearLayout>

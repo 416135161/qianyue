@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical" >
+
+     <include layout="@layout/layout_header_view" />
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="15dp" >
+
+        <TextView
+            style="@style/teacher_text"
+            android:text="姓名" />
+
+        <TextView
+            android:id="@+id/text_name"
+            style="@style/teacher_editText"
+             />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/teacher_text"
+            android:text="身份证" />
+
+        <TextView
+            android:id="@+id/text_no"
+            style="@style/teacher_editText"
+             />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/teacher_text"
+            android:text="车型" />
+
+        <TextView
+            android:id="@+id/mCarType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/teacher_text"
+            android:text="车牌号" />
+
+        <TextView
+            android:id="@+id/text_carNo"
+            style="@style/teacher_editText"
+             />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="证件信息"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+
+        <TextView
+            android:id="@+id/text_state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18"
+            android:gravity="right"
+            android:text="已认证"
+             />
+    </LinearLayout>
+
+</LinearLayout>

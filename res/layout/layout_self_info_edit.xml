@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ground_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <LinearLayout
+        android:id="@+id/view_image_header"
+        style="@style/my_info_center_image_header_item"
+        android:layout_marginTop="15dp" >
+
+        <TextView
+            style="@style/my_info_center_text"
+            android:text="头像" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.internet.view.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/image_header"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/user_tip"
+            app:border_color="#40ac6e2f"
+            app:border_width="1dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_arrow_right"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/my_info_center_text"
+            android:text="姓别" />
+
+        <TextView
+            android:id="@+id/text_sex"
+            style="@style/my_info_center_editText"
+            android:text="男" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_arrow_right"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/my_info_center_text"
+            android:text="出生" />
+
+        <TextView
+            android:id="@+id/text_birthday"
+            style="@style/my_info_center_editText"
+            android:text="1982/2/25" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/my_info_center_text"
+            android:text="驾龄" />
+
+        <EditText
+            android:id="@+id/text_age"
+            style="@style/my_info_center_editText"
+            android:hint="请输入您的教龄"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <TextView
+            style="@style/layout.w.w"
+            android:layout_marginRight="10dp"
+            android:text="年"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_18" />
+    </LinearLayout>
+
+    <com.internet.view.SelectAddressView_
+        android:id="@+id/view_address"
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" />
+
+    <LinearLayout style="@style/my_info_center_item" >
+
+        <TextView style="@style/my_info_center_text" />
+
+        <EditText
+            android:id="@+id/text_home"
+            style="@style/my_info_center_editText"
+            android:hint="请输入家庭地址"
+            android:maxLines="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_arrow_right"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/my_info_center_text"
+            android:text="称号" />
+
+        <TextView
+            android:id="@+id/text_call"
+            style="@style/my_info_center_editText"
+            android:text="师傅" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_arrow_right"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_info_center_item"
+        android:layout_marginTop="1dp" >
+
+        <TextView
+            style="@style/my_info_center_text"
+            android:text="驾校" />
+
+        <EditText
+            android:id="@+id/text_school"
+            style="@style/my_info_center_editText"
+            android:hint="填写所属驾校"
+            android:maxLines="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_arrow_right"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</LinearLayout>

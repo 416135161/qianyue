@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ImageView
+        android:id="@+id/image_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/image_back"
+        android:paddingRight="10dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" >
+
+        <RelativeLayout
+            android:id="@+id/title1"
+            android:layout_width="90dp"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/text_title_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="场地"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/text_tip_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/main_message_tip_bg"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_14"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/view_bottom_1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/bg_white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/title2"
+            android:layout_width="90dp"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/text_title_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="练路"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/text_tip_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_14"
+                android:visibility="invisible" />
+            <!-- android:background="@drawable/main_message_tip_bg" -->
+
+            <View
+                android:id="@+id/view_bottom_2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/bg_white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/title3"
+            android:layout_width="90dp"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/text_title_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="陪驾"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/text_tip_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_14"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/view_bottom_3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/bg_white" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</merge>

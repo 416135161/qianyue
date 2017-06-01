@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <TextView
+        android:id="@+id/mTitle"
+        style="@style/layout.m.w"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:text="听课券"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_18" />
+
+</merge>

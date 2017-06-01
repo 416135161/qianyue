@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/regist_item" >
+
+        <TextView
+            style="@style/regist_dsp_text"
+            android:text="姓名" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_name"
+            style="@style/regist_dsp_editText"
+            android:hint="请填写您的真实姓名" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/regist_item" >
+
+        <TextView
+            style="@style/regist_dsp_text"
+            android:text="教龄" >
+        </TextView>
+
+        <EditText
+             android:id="@+id/edit_old"
+            style="@style/regist_dsp_editText"
+            android:hint="请输入您的教龄" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/regist_item" >
+
+        <TextView
+            style="@style/regist_dsp_text"
+            android:text="地区" >
+        </TextView>
+
+        <TextView
+             android:id="@+id/edit_area"
+            style="@style/regist_dsp_editText"
+            android:hint="四川-成都-青羊"
+            android:drawableRight="@drawable/image_arrow_right" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/regist_item" >
+
+        <TextView
+            style="@style/regist_dsp_text"
+            android:text="地址" >
+        </TextView>
+
+        <EditText
+             android:id="@+id/edit_address"
+            style="@style/regist_dsp_editText"
+            android:hint="请输入家庭地址" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/regist_item" >
+
+        <TextView
+            style="@style/regist_dsp_text"
+            android:text="车型" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/edit_model"
+            style="@style/regist_dsp_editText"
+            android:drawableRight="@drawable/image_arrow_right"
+            android:hint="请填写您的教练车型" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/regist_item" >
+
+        <TextView
+            style="@style/regist_dsp_text"
+            android:text="车牌" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_no"
+            style="@style/regist_dsp_editText"
+            android:hint="请填写车牌号" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/regist_item" >
+
+        <TextView
+            style="@style/regist_dsp_text"
+            android:text="驾校" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_school"
+            style="@style/regist_dsp_editText"
+            android:hint="所属驾校" />
+    </LinearLayout>
+
+</LinearLayout>

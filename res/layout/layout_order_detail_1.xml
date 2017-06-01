@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        style="@style/order_detail_item"
+        android:layout_marginTop="15dp"
+        android:gravity="center" >
+
+        <TextView
+            style="@style/order_item_right_text"
+            android:text="预约信息" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/order_detail_item" >
+
+        <TextView
+            style="@style/order_item_left_text"
+            android:text="订单编号" />
+
+        <TextView
+            style="@style/order_item_right_text"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:text=":" />
+
+        <TextView
+            android:id="@+id/text_1_1"
+            style="@style/order_item_right_text" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/order_detail_item" >
+
+        <TextView
+            style="@style/order_item_left_text"
+            android:text="练车方式" />
+
+        <TextView
+            style="@style/order_item_right_text"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:text=":" />
+
+        <TextView
+            android:id="@+id/text_1_2"
+            style="@style/order_item_right_text" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/order_detail_item" >
+
+        <TextView
+            style="@style/order_item_left_text"
+            android:text="场地名称" />
+
+        <TextView
+            style="@style/order_item_right_text"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:text=":" />
+
+        <TextView
+            android:id="@+id/text_1_3"
+            style="@style/order_item_right_text" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/order_detail_item" >
+
+        <TextView
+            style="@style/order_item_left_text"
+            android:text="预约时间" />
+
+        <TextView
+            style="@style/order_item_right_text"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:text=":" />
+
+        <TextView
+            android:id="@+id/text_1_4"
+            style="@style/order_item_right_text" />
+    </LinearLayout>
+
+</merge>

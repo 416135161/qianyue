@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff3f1ed"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_header_view" />
+
+    <FrameLayout style="@style/layout.m.m" >
+
+        <LinearLayout
+            style="@style/layout.m.m"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/bg_white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="25dp" >
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/text_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/text_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_18" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_recommend"
+                style="@style/my_info_center_item"
+                android:layout_marginTop="1dp" >
+
+                <TextView
+                    style="@style/my_info_center_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="推荐给朋友"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_18" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/image_arrow_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_phone"
+                style="@style/my_info_center_item"
+                android:layout_marginTop="1dp" >
+
+                <TextView
+                    style="@style/my_info_center_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="客服电话"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/text_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_18" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_share"
+            style="@style/layout.m.w"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_black" />
+
+            <TextView
+                android:id="@+id/app_share_wx_circle"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="分享给微信朋友圈"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_black" />
+
+            <TextView
+                android:id="@+id/app_share_wx"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="分享给微信好友"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_black" />
+
+            <TextView
+                android:id="@+id/text_qx"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

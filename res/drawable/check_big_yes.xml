@@ -1,0 +1,7 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item  android:drawable="@drawable/check_big_no"/>
+        
+ 
+  <item  android:drawable="@drawable/check"/>
+</layer-list>

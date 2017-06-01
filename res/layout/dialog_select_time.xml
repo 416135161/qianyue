@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout.m.m" >
+
+    <com.internet.view.DialogBgView
+        android:id="@+id/mDialogBg"
+        style="@style/layout.m.m"
+        android:background="@color/bg_black_e0" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TimePicker
+            android:id="@+id/mTimePiker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/btn_white"
+                android:text="取消"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="2dp" />
+
+            <Button
+                android:id="@+id/btn_ensure"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/btn_white"
+                android:text="确定"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_18" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
