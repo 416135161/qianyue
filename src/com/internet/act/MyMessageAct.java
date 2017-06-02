@@ -34,7 +34,7 @@ import com.internet.http.api.ApiManager;
 import com.internet.http.data.post.DeleteMessagePost;
 import com.internet.http.data.post.ListMessagePost;
 import com.internet.http.data.response.ListMessageResponse;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.DensityUtil;
 import com.internet.view.HeaderView;
 import com.internet.view.ListItemMessageView_;

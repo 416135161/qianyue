@@ -15,8 +15,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -76,21 +76,6 @@ public final class WelcomeAct_
     @Override
     public void onViewChanged(HasViews hasViews) {
         {
-            View view = hasViews.findViewById(id.btn_login);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        WelcomeAct_.this.login();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = hasViews.findViewById(id.btn_regist);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -105,17 +90,32 @@ public final class WelcomeAct_
                 );
             }
         }
+        {
+            View view = hasViews.findViewById(id.btn_login);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        WelcomeAct_.this.login();
+                    }
+
+                }
+                );
+            }
+        }
         init();
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                WelcomeAct_.super.onApiException(arg0);
+                WelcomeAct_.super.showLoading(tip);
             }
 
         }
@@ -123,13 +123,41 @@ public final class WelcomeAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                WelcomeAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
+    }
+
+    @Override
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                WelcomeAct_.super.fullScreen(arg0);
+                WelcomeAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onApiException(final ApiException ex) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                WelcomeAct_.super.onApiException(ex);
             }
 
         }
@@ -151,6 +179,20 @@ public final class WelcomeAct_
     }
 
     @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                WelcomeAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void showLoading() {
         handler_.post(new Runnable() {
 
@@ -162,48 +204,6 @@ public final class WelcomeAct_
 
         }
         );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                WelcomeAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                WelcomeAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                WelcomeAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
     }
 
     @Override

@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.internet.action.ActionOrderTitle;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 import de.greenrobot.event.EventBus;
 

@@ -22,7 +22,7 @@ import com.internet.basic.BasicActivity;
 import com.internet.http.api.ApiException;
 import com.internet.http.api.ApiManager;
 import com.internet.http.data.post.LoginPost;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 /**
  * @Author: ningsj@shishike.com

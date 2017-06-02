@@ -22,7 +22,7 @@ import com.internet.http.data.post.AreaSearchPost;
 import com.internet.http.data.response.AreaResponse;
 import com.internet.http.data.vo.AreaVO;
 import com.internet.http.data.vo.UserInfoVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.view.HeaderView;
 
 @EActivity(R.layout.act_self_info_select_city)

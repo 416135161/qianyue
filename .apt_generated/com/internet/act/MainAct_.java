@@ -20,8 +20,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.response.GetBannerResponse.Banner;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.CircleImageView;
 import com.internet.view.MainBottomItemView;
 import org.androidannotations.api.BackgroundExecutor;
@@ -83,11 +83,26 @@ public final class MainAct_
     @Override
     public void onViewChanged(HasViews hasViews) {
         text_bottom_order = ((MainBottomItemView) hasViews.findViewById(id.text_bottom_order));
-        text_bottom_income = ((MainBottomItemView) hasViews.findViewById(id.text_bottom_income));
         text_bottom_home = ((MainBottomItemView) hasViews.findViewById(id.text_bottom_home));
+        image_header = ((CircleImageView) hasViews.findViewById(id.image_header));
         text_bottom_exam = ((MainBottomItemView) hasViews.findViewById(id.text_bottom_exam));
         text_tip = ((TextView) hasViews.findViewById(id.text_tip));
-        image_header = ((CircleImageView) hasViews.findViewById(id.image_header));
+        text_bottom_income = ((MainBottomItemView) hasViews.findViewById(id.text_bottom_income));
+        {
+            View view = hasViews.findViewById(id.view_message);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MainAct_.this.clickTip();
+                    }
+
+                }
+                );
+            }
+        }
         {
             View view = hasViews.findViewById(id.text_my_income);
             if (view!= null) {
@@ -119,6 +134,36 @@ public final class MainAct_
             }
         }
         {
+            View view = hasViews.findViewById(id.text_bottom_home);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MainAct_.this.home();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.image_header);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MainAct_.this.imagePhoto();
+                    }
+
+                }
+                );
+            }
+        }
+        {
             View view = hasViews.findViewById(id.text_make_order);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -142,36 +187,6 @@ public final class MainAct_
                     @Override
                     public void onClick(View view) {
                         MainAct_.this.makeOrder();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.view_message);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MainAct_.this.clickTip();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.image_header);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MainAct_.this.imagePhoto();
                     }
 
                 }
@@ -224,36 +239,6 @@ public final class MainAct_
             }
         }
         {
-            View view = hasViews.findViewById(id.text_bottom_exam);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MainAct_.this.makeExam();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.text_bottom_home);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MainAct_.this.home();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = hasViews.findViewById(id.text_my_student);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -268,73 +253,32 @@ public final class MainAct_
                 );
             }
         }
+        {
+            View view = hasViews.findViewById(id.text_bottom_exam);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MainAct_.this.makeExam();
+                    }
+
+                }
+                );
+            }
+        }
         init();
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void closeLoading() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                MainAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainAct_.super.showToast(arg0);
+                MainAct_.super.closeLoading();
             }
 
         }
@@ -356,13 +300,69 @@ public final class MainAct_
     }
 
     @Override
-    public void closeLoading() {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                MainAct_.super.closeLoading();
+                MainAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onApiException(final ApiException ex) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainAct_.super.showLoading(tip);
             }
 
         }
@@ -377,34 +377,6 @@ public final class MainAct_
             @Override
             public void run() {
                 MainAct_.super.goPublic(typeCode);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showMessageQuntity(final int quntity) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainAct_.super.showMessageQuntity(quntity);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showHead(final boolean isShow, final Bitmap bitmap) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainAct_.super.showHead(isShow, bitmap);
             }
 
         }
@@ -440,6 +412,20 @@ public final class MainAct_
     }
 
     @Override
+    public void showMessageQuntity(final int quntity) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainAct_.super.showMessageQuntity(quntity);
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void showPageItem(final ImageView imageView, final Bitmap bitmap) {
         handler_.post(new Runnable() {
 
@@ -447,6 +433,20 @@ public final class MainAct_
             @Override
             public void run() {
                 MainAct_.super.showPageItem(imageView, bitmap);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showHead(final boolean isShow, final Bitmap bitmap) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainAct_.super.showHead(isShow, bitmap);
             }
 
         }
@@ -472,14 +472,14 @@ public final class MainAct_
     }
 
     @Override
-    public void findUser2(final String typeCode) {
+    public void getBanner() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    MainAct_.super.findUser2(typeCode);
+                    MainAct_.super.getBanner();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -490,14 +490,14 @@ public final class MainAct_
     }
 
     @Override
-    public void findUser() {
+    public void getMessageQuntity() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    MainAct_.super.findUser();
+                    MainAct_.super.getMessageQuntity();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -544,14 +544,14 @@ public final class MainAct_
     }
 
     @Override
-    public void getMessageQuntity() {
+    public void findUser2(final String typeCode) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    MainAct_.super.getMessageQuntity();
+                    MainAct_.super.findUser2(typeCode);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -562,14 +562,14 @@ public final class MainAct_
     }
 
     @Override
-    public void getBanner() {
+    public void findUser() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    MainAct_.super.getBanner();
+                    MainAct_.super.findUser();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

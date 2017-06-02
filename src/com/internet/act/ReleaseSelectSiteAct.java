@@ -23,7 +23,7 @@ import com.internet.http.api.ApiManager;
 import com.internet.http.data.post.GetSiteListPost;
 import com.internet.http.data.response.GetSiteListResponse;
 import com.internet.http.data.vo.SiteVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.view.HeaderView;
 import com.internet.view.ListItemSiteView_;
 

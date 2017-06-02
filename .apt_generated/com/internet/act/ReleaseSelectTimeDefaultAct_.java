@@ -18,8 +18,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -79,20 +79,20 @@ public final class ReleaseSelectTimeDefaultAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        edit_price = ((EditText) hasViews.findViewById(id.edit_price));
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
-        check1 = ((CheckBox) hasViews.findViewById(id.check1));
-        text1 = ((TextView) hasViews.findViewById(id.text1));
-        check2 = ((CheckBox) hasViews.findViewById(id.check2));
-        check6 = ((CheckBox) hasViews.findViewById(id.check6));
-        check4 = ((CheckBox) hasViews.findViewById(id.check4));
         text2 = ((TextView) hasViews.findViewById(id.text2));
-        check5 = ((CheckBox) hasViews.findViewById(id.check5));
-        text3 = ((TextView) hasViews.findViewById(id.text3));
-        text5 = ((TextView) hasViews.findViewById(id.text5));
-        text6 = ((TextView) hasViews.findViewById(id.text6));
-        check3 = ((CheckBox) hasViews.findViewById(id.check3));
+        edit_price = ((EditText) hasViews.findViewById(id.edit_price));
         text4 = ((TextView) hasViews.findViewById(id.text4));
+        check5 = ((CheckBox) hasViews.findViewById(id.check5));
+        check6 = ((CheckBox) hasViews.findViewById(id.check6));
+        text3 = ((TextView) hasViews.findViewById(id.text3));
+        text1 = ((TextView) hasViews.findViewById(id.text1));
+        check3 = ((CheckBox) hasViews.findViewById(id.check3));
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
+        text6 = ((TextView) hasViews.findViewById(id.text6));
+        check1 = ((CheckBox) hasViews.findViewById(id.check1));
+        text5 = ((TextView) hasViews.findViewById(id.text5));
+        check4 = ((CheckBox) hasViews.findViewById(id.check4));
+        check2 = ((CheckBox) hasViews.findViewById(id.check2));
         {
             View view = hasViews.findViewById(id.btn_save);
             if (view!= null) {
@@ -112,13 +112,13 @@ public final class ReleaseSelectTimeDefaultAct_
     }
 
     @Override
-    public void showLoading() {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSelectTimeDefaultAct_.super.showLoading();
+                ReleaseSelectTimeDefaultAct_.super.showToast(content);
             }
 
         }
@@ -126,27 +126,13 @@ public final class ReleaseSelectTimeDefaultAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSelectTimeDefaultAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSelectTimeDefaultAct_.super.showToast(arg0);
+                ReleaseSelectTimeDefaultAct_.super.fullScreen(enable);
             }
 
         }
@@ -168,13 +154,41 @@ public final class ReleaseSelectTimeDefaultAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSelectTimeDefaultAct_.super.fullScreen(arg0);
+                ReleaseSelectTimeDefaultAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onApiException(final ApiException ex) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSelectTimeDefaultAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSelectTimeDefaultAct_.super.showLoading();
             }
 
         }
@@ -193,20 +207,6 @@ public final class ReleaseSelectTimeDefaultAct_
 
         }
         , 200L);
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSelectTimeDefaultAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
     }
 
     @Override

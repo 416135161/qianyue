@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 import android.content.Context;
 import android.graphics.Color;

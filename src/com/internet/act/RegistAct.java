@@ -26,7 +26,7 @@ import com.internet.http.api.ApiException;
 import com.internet.http.api.ApiManager;
 import com.internet.http.data.post.RegisterPost;
 import com.internet.http.data.post.SendCodePost;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 /**
  * @Author: ningsj@shishike.com

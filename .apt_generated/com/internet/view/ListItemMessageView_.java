@@ -9,8 +9,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -79,8 +79,8 @@ public final class ListItemMessageView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mTitle = ((TextView) hasViews.findViewById(id.mTitle));
         mDate = ((TextView) hasViews.findViewById(id.mDate));
+        mTitle = ((TextView) hasViews.findViewById(id.mTitle));
         mImage = ((ImageView) hasViews.findViewById(id.mImage));
         mContent = ((TextView) hasViews.findViewById(id.mContent));
         init();

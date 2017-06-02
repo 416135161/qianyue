@@ -8,8 +8,8 @@ package com.internet.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -78,9 +78,9 @@ public final class ListItemUserAppointView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        text_1 = ((TextView) hasViews.findViewById(id.text_1));
         text_2 = ((TextView) hasViews.findViewById(id.text_2));
         text_3 = ((TextView) hasViews.findViewById(id.text_3));
-        text_1 = ((TextView) hasViews.findViewById(id.text_1));
     }
 
 }

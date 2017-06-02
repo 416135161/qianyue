@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.internet.basic.AdapterView;
 import com.internet.http.data.vo.SiteVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.DensityUtil;
 
 @EViewGroup(R.layout.view_list_item_site)

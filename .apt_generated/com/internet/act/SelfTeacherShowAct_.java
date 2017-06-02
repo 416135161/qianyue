@@ -15,8 +15,8 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -76,23 +76,23 @@ public final class SelfTeacherShowAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         text_name = ((TextView) hasViews.findViewById(id.text_name));
-        text_carNo = ((TextView) hasViews.findViewById(id.text_carNo));
-        text_state = ((TextView) hasViews.findViewById(id.text_state));
-        mCarType = ((TextView) hasViews.findViewById(id.mCarType));
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         text_no = ((TextView) hasViews.findViewById(id.text_no));
+        mCarType = ((TextView) hasViews.findViewById(id.mCarType));
+        text_state = ((TextView) hasViews.findViewById(id.text_state));
+        text_carNo = ((TextView) hasViews.findViewById(id.text_carNo));
         init();
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfTeacherShowAct_.super.fullScreen(arg0);
+                SelfTeacherShowAct_.super.onApiException(ex);
             }
 
         }
@@ -100,27 +100,13 @@ public final class SelfTeacherShowAct_
     }
 
     @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfTeacherShowAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfTeacherShowAct_.super.onApiException(arg0);
+                SelfTeacherShowAct_.super.showToast(content);
             }
 
         }
@@ -128,27 +114,13 @@ public final class SelfTeacherShowAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfTeacherShowAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfTeacherShowAct_.super.showLoading(arg0);
+                SelfTeacherShowAct_.super.fullScreen(enable);
             }
 
         }
@@ -170,6 +142,20 @@ public final class SelfTeacherShowAct_
     }
 
     @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfTeacherShowAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void showLoading() {
         handler_.post(new Runnable() {
 
@@ -181,6 +167,20 @@ public final class SelfTeacherShowAct_
 
         }
         );
+    }
+
+    @Override
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfTeacherShowAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
     }
 
     @Override

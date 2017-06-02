@@ -15,8 +15,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.SdkVersionHelper;
 import org.androidannotations.api.view.HasViews;
@@ -84,26 +84,15 @@ public final class PoorPeopleDetailAct_
     @Override
     public void onViewChanged(HasViews hasViews) {
         id_text3 = ((TextView) hasViews.findViewById(id.id_text3));
-        id_text1 = ((TextView) hasViews.findViewById(id.id_text1));
-        id_text4 = ((TextView) hasViews.findViewById(id.id_text4));
         mPageVp = ((ViewPager) hasViews.findViewById(id.id_page_vp));
-        id_text2 = ((TextView) hasViews.findViewById(id.id_text2));
+        id_text1 = ((TextView) hasViews.findViewById(id.id_text1));
+        id_view2 = ((View) hasViews.findViewById(id.id_view2));
         view_header = ((HeaderView) hasViews.findViewById(id.view_header));
-        {
-            View view = hasViews.findViewById(id.id_text3);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        PoorPeopleDetailAct_.this.clickText3();
-                    }
-
-                }
-                );
-            }
-        }
+        id_view1 = ((View) hasViews.findViewById(id.id_view1));
+        id_view4 = ((View) hasViews.findViewById(id.id_view4));
+        id_text2 = ((TextView) hasViews.findViewById(id.id_text2));
+        id_text4 = ((TextView) hasViews.findViewById(id.id_text4));
+        id_view3 = ((View) hasViews.findViewById(id.id_view3));
         {
             View view = hasViews.findViewById(id.id_text1);
             if (view!= null) {
@@ -143,6 +132,21 @@ public final class PoorPeopleDetailAct_
                     @Override
                     public void onClick(View view) {
                         PoorPeopleDetailAct_.this.clickText4();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.id_text3);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        PoorPeopleDetailAct_.this.clickText3();
                     }
 
                 }

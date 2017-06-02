@@ -56,7 +56,7 @@ import com.internet.http.data.response.AuthInfoResponse;
 import com.internet.http.data.response.SelectSysTypeResponse;
 import com.internet.http.data.vo.AuthInfoVO;
 import com.internet.http.data.vo.SelectSysTypeVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.FileUtils;
 import com.internet.util.PicUtil;
 import com.internet.view.HeaderView;

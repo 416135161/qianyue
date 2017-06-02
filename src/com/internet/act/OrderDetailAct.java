@@ -36,7 +36,7 @@ import com.internet.http.data.vo.OrderDetailVO;
 import com.internet.http.data.vo.OrderDetailVO.BaseUserVO;
 import com.internet.http.data.vo.OrderDetailVO.ScheduleVO;
 import com.internet.http.data.vo.StudentDetailVO.UserAppoint;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.DateTimeUtil;
 import com.internet.util.FileUtils;
 import com.internet.util.PicUtil;

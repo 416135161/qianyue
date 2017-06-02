@@ -68,17 +68,17 @@ public final class BasicActivity_
     }
 
     @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                BasicActivity_.super.closeInputKeyboard();
+                BasicActivity_.super.showLoading(tip);
             }
 
         }
-        , 200L);
+        );
     }
 
     @Override
@@ -89,20 +89,6 @@ public final class BasicActivity_
             @Override
             public void run() {
                 BasicActivity_.super.showToast(content);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException ex) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                BasicActivity_.super.onApiException(ex);
             }
 
         }
@@ -124,13 +110,27 @@ public final class BasicActivity_
     }
 
     @Override
-    public void fullScreen(final boolean enable) {
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                BasicActivity_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
+    }
+
+    @Override
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                BasicActivity_.super.fullScreen(enable);
+                BasicActivity_.super.onApiException(ex);
             }
 
         }
@@ -138,13 +138,13 @@ public final class BasicActivity_
     }
 
     @Override
-    public void showLoading(final String tip) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                BasicActivity_.super.showLoading(tip);
+                BasicActivity_.super.fullScreen(enable);
             }
 
         }

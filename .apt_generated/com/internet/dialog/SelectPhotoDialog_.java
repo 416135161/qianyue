@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -64,14 +64,14 @@ public final class SelectPhotoDialog_
     @Override
     public void onViewChanged(HasViews hasViews) {
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.text_pz);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.view);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        SelectPhotoDialog_.this.clickPZ();
+                        SelectPhotoDialog_.this.clickView();
                     }
 
                 }
@@ -79,7 +79,7 @@ public final class SelectPhotoDialog_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.text_qx);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.text_qx);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -94,7 +94,7 @@ public final class SelectPhotoDialog_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.text_xc);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.text_xc);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -109,14 +109,14 @@ public final class SelectPhotoDialog_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.view);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.text_pz);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        SelectPhotoDialog_.this.clickView();
+                        SelectPhotoDialog_.this.clickPZ();
                     }
 
                 }

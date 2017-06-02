@@ -17,8 +17,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.response.GetYzwMessageResponse.YzwMessage;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -78,11 +78,26 @@ public final class AboutAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_version = ((TextView) hasViews.findViewById(id.text_version));
         text_phone = ((TextView) hasViews.findViewById(id.text_phone));
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
-        view_share = ((View) hasViews.findViewById(id.view_share));
         text_introduce = ((TextView) hasViews.findViewById(id.text_introduce));
+        text_version = ((TextView) hasViews.findViewById(id.text_version));
+        view_share = ((View) hasViews.findViewById(id.view_share));
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
+        {
+            View view = hasViews.findViewById(id.view_phone);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        AboutAct_.this.clickPhone();
+                    }
+
+                }
+                );
+            }
+        }
         {
             View view = hasViews.findViewById(id.app_share_wx);
             if (view!= null) {
@@ -129,21 +144,6 @@ public final class AboutAct_
             }
         }
         {
-            View view = hasViews.findViewById(id.view_phone);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        AboutAct_.this.clickPhone();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = hasViews.findViewById(id.view_recommend);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -162,6 +162,34 @@ public final class AboutAct_
     }
 
     @Override
+    public void onApiException(final ApiException ex) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                AboutAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                AboutAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void closeInputKeyboard() {
         handler_.postDelayed(new Runnable() {
 
@@ -176,13 +204,13 @@ public final class AboutAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                AboutAct_.super.showLoading(arg0);
+                AboutAct_.super.showToast(content);
             }
 
         }
@@ -204,34 +232,6 @@ public final class AboutAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                AboutAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                AboutAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void showLoading() {
         handler_.post(new Runnable() {
 
@@ -246,13 +246,13 @@ public final class AboutAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                AboutAct_.super.fullScreen(arg0);
+                AboutAct_.super.showLoading(tip);
             }
 
         }

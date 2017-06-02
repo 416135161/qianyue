@@ -17,7 +17,7 @@
     <color name="line_blue">#00A0E8</color>
     <color name="line_notify_detail">#ac6e2f</color>
     
-    <color name="bg_main">#ffffffff</color>
+    <color name="bg_main">#ffe7e7e7</color>
     <color name="bg_header">#ff3791d0</color>
     
      <color name="bg_color">#f8f8f8</color>

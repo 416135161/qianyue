@@ -18,7 +18,7 @@ import com.internet.http.data.post.AuthInfoPost;
 import com.internet.http.data.response.AuthInfoResponse;
 import com.internet.http.data.vo.AuthInfoVO;
 import com.internet.http.data.vo.UserInfoVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.view.HeaderView;
 
 @EActivity(R.layout.act_self_teacher_show)

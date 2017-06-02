@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TimePicker;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -65,11 +65,11 @@ public final class DialogSelectTime_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        btn_ensure = ((Button) hasViews.findViewById(com.internet.turnright.b.R.id.btn_ensure));
-        mTimePiker = ((TimePicker) hasViews.findViewById(com.internet.turnright.b.R.id.mTimePiker));
-        btn_cancel = ((Button) hasViews.findViewById(com.internet.turnright.b.R.id.btn_cancel));
+        btn_cancel = ((Button) hasViews.findViewById(com.internet.qianyue.R.id.btn_cancel));
+        btn_ensure = ((Button) hasViews.findViewById(com.internet.qianyue.R.id.btn_ensure));
+        mTimePiker = ((TimePicker) hasViews.findViewById(com.internet.qianyue.R.id.mTimePiker));
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.btn_ensure);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.btn_ensure);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -84,7 +84,7 @@ public final class DialogSelectTime_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.btn_cancel);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.btn_cancel);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 

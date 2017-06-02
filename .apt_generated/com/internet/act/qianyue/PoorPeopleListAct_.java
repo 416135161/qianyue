@@ -11,21 +11,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.response.GetSiteListResponse;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
-import com.internet.view.SearchSiteView;
 import org.androidannotations.api.BackgroundExecutor;
-import org.androidannotations.api.SdkVersionHelper;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -82,67 +79,13 @@ public final class PoorPeopleListAct_
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (((SdkVersionHelper.getSdkInt()< 5)&&(keyCode == KeyEvent.KEYCODE_BACK))&&(event.getRepeatCount() == 0)) {
-            onBackPressed();
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
     public void onViewChanged(HasViews hasViews) {
+        listView = ((ListView) hasViews.findViewById(id.listView));
         view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         edit_search = ((EditText) hasViews.findViewById(id.edit_search));
-        listView = ((ListView) hasViews.findViewById(id.listView));
-        layout_search = ((SearchSiteView) hasViews.findViewById(id.layout_search));
-        text_search = ((TextView) hasViews.findViewById(id.text_search));
+        image_search = ((ImageView) hasViews.findViewById(id.image_search));
         {
-            View view = hasViews.findViewById(id.view_search);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        PoorPeopleListAct_.this.clickSearch();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.text_cancel);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        PoorPeopleListAct_.this.clickSearchCancel();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.tv_ok);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        PoorPeopleListAct_.this.click(view);
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.text_search);
+            View view = hasViews.findViewById(id.image_search);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -160,13 +103,13 @@ public final class PoorPeopleListAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                PoorPeopleListAct_.super.showToast(arg0);
+                PoorPeopleListAct_.super.onApiException(ex);
             }
 
         }
@@ -174,13 +117,13 @@ public final class PoorPeopleListAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void closeLoading() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                PoorPeopleListAct_.super.fullScreen(arg0);
+                PoorPeopleListAct_.super.closeLoading();
             }
 
         }
@@ -188,41 +131,13 @@ public final class PoorPeopleListAct_
     }
 
     @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                PoorPeopleListAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                PoorPeopleListAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                PoorPeopleListAct_.super.onApiException(arg0);
+                PoorPeopleListAct_.super.showLoading(tip);
             }
 
         }
@@ -244,13 +159,41 @@ public final class PoorPeopleListAct_
     }
 
     @Override
-    public void closeLoading() {
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                PoorPeopleListAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                PoorPeopleListAct_.super.closeLoading();
+                PoorPeopleListAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                PoorPeopleListAct_.super.showToast(content);
             }
 
         }

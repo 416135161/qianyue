@@ -14,7 +14,7 @@ import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -70,13 +70,13 @@ public final class LauncherAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void closeLoading() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LauncherAct_.super.onApiException(arg0);
+                LauncherAct_.super.closeLoading();
             }
 
         }
@@ -84,27 +84,13 @@ public final class LauncherAct_
     }
 
     @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                LauncherAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LauncherAct_.super.fullScreen(arg0);
+                LauncherAct_.super.showLoading(tip);
             }
 
         }
@@ -112,27 +98,13 @@ public final class LauncherAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LauncherAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                LauncherAct_.super.showToast(arg0);
+                LauncherAct_.super.onApiException(ex);
             }
 
         }
@@ -154,13 +126,41 @@ public final class LauncherAct_
     }
 
     @Override
-    public void closeLoading() {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LauncherAct_.super.closeLoading();
+                LauncherAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                LauncherAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                LauncherAct_.super.showToast(content);
             }
 
         }

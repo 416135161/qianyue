@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 @EViewGroup(R.layout.view_image_text)
 public class ImageTextView extends LinearLayout {

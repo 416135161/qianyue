@@ -15,7 +15,7 @@ import com.internet.act.OrderDetailAct;
 import com.internet.act.OrderDetailAct_;
 import com.internet.basic.AdapterView;
 import com.internet.entity.OrderEntity;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.DateTimeUtil;
 
 @EViewGroup(R.layout.list_item_order)

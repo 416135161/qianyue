@@ -20,7 +20,7 @@ import com.internet.http.api.ApiManager;
 import com.internet.http.data.post.AddStudentPost;
 import com.internet.http.data.post.TakeInOrderPost;
 import com.internet.http.data.response.CommonResponse;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.view.HeaderView;
 
 @EActivity(R.layout.act_add_student)

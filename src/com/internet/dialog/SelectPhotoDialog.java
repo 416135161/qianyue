@@ -4,7 +4,7 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 
 import com.internet.action.ActionSelectPhoto;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 import de.greenrobot.event.EventBus;
 

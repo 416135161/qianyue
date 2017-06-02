@@ -21,7 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.response.GetSiteListResponse;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -81,12 +81,12 @@ public final class ReleaseSelectSiteAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_search = ((TextView) hasViews.findViewById(com.internet.turnright.b.R.id.text_search));
-        edit_search = ((EditText) hasViews.findViewById(com.internet.turnright.b.R.id.edit_search));
-        view_header = ((HeaderView) hasViews.findViewById(com.internet.turnright.b.R.id.view_header));
-        mListView = ((ListView) hasViews.findViewById(com.internet.turnright.b.R.id.mListView));
+        mListView = ((ListView) hasViews.findViewById(com.internet.qianyue.R.id.mListView));
+        edit_search = ((EditText) hasViews.findViewById(com.internet.qianyue.R.id.edit_search));
+        text_search = ((TextView) hasViews.findViewById(com.internet.qianyue.R.id.text_search));
+        view_header = ((HeaderView) hasViews.findViewById(com.internet.qianyue.R.id.view_header));
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.text_search);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.text_search);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -101,7 +101,7 @@ public final class ReleaseSelectSiteAct_
             }
         }
         {
-            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.turnright.b.R.id.mListView));
+            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.qianyue.R.id.mListView));
             if (view!= null) {
                 view.setOnItemClickListener(new OnItemClickListener() {
 
@@ -119,13 +119,27 @@ public final class ReleaseSelectSiteAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSelectSiteAct_.super.showToast(arg0);
+                ReleaseSelectSiteAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSelectSiteAct_.super.showLoading(tip);
             }
 
         }
@@ -147,55 +161,13 @@ public final class ReleaseSelectSiteAct_
     }
 
     @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSelectSiteAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSelectSiteAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSelectSiteAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSelectSiteAct_.super.showLoading(arg0);
+                ReleaseSelectSiteAct_.super.onApiException(ex);
             }
 
         }
@@ -214,6 +186,34 @@ public final class ReleaseSelectSiteAct_
 
         }
         );
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSelectSiteAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSelectSiteAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
     }
 
     @Override

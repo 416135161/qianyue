@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -93,28 +93,13 @@ public final class HeaderViewMainOrder_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_title_3 = ((TextView) hasViews.findViewById(id.text_title_3));
-        view_bottom_1 = ((View) hasViews.findViewById(id.view_bottom_1));
-        view_bottom_2 = ((View) hasViews.findViewById(id.view_bottom_2));
         text_title_2 = ((TextView) hasViews.findViewById(id.text_title_2));
-        text_title_1 = ((TextView) hasViews.findViewById(id.text_title_1));
+        view_bottom_1 = ((View) hasViews.findViewById(id.view_bottom_1));
+        text_title_3 = ((TextView) hasViews.findViewById(id.text_title_3));
         image_back = ((ImageView) hasViews.findViewById(id.image_back));
         view_bottom_3 = ((View) hasViews.findViewById(id.view_bottom_3));
-        {
-            View view = hasViews.findViewById(id.title2);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        HeaderViewMainOrder_.this.click2();
-                    }
-
-                }
-                );
-            }
-        }
+        text_title_1 = ((TextView) hasViews.findViewById(id.text_title_1));
+        view_bottom_2 = ((View) hasViews.findViewById(id.view_bottom_2));
         {
             View view = hasViews.findViewById(id.image_back);
             if (view!= null) {
@@ -131,21 +116,6 @@ public final class HeaderViewMainOrder_
             }
         }
         {
-            View view = hasViews.findViewById(id.title3);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        HeaderViewMainOrder_.this.click3();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = hasViews.findViewById(id.title1);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -154,6 +124,36 @@ public final class HeaderViewMainOrder_
                     @Override
                     public void onClick(View view) {
                         HeaderViewMainOrder_.this.click1();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.title2);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        HeaderViewMainOrder_.this.click2();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.title3);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        HeaderViewMainOrder_.this.click3();
                     }
 
                 }

@@ -18,8 +18,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.CircleImageView;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
@@ -81,13 +81,28 @@ public final class SelfInfoEditAct_
     @Override
     public void onViewChanged(HasViews hasViews) {
         text_home = ((EditText) hasViews.findViewById(id.text_home));
-        text_age = ((EditText) hasViews.findViewById(id.text_age));
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
-        text_school = ((EditText) hasViews.findViewById(id.text_school));
-        text_address = ((TextView) hasViews.findViewById(id.text_address));
-        image_header = ((CircleImageView) hasViews.findViewById(id.image_header));
         text_birthday = ((TextView) hasViews.findViewById(id.text_birthday));
+        text_age = ((EditText) hasViews.findViewById(id.text_age));
+        image_header = ((CircleImageView) hasViews.findViewById(id.image_header));
         text_sex = ((TextView) hasViews.findViewById(id.text_sex));
+        text_address = ((TextView) hasViews.findViewById(id.text_address));
+        text_school = ((EditText) hasViews.findViewById(id.text_school));
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
+        {
+            View view = hasViews.findViewById(id.view_address);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        SelfInfoEditAct_.this.clickAddress();
+                    }
+
+                }
+                );
+            }
+        }
         {
             View view = hasViews.findViewById(id.view_image_header);
             if (view!= null) {
@@ -104,14 +119,14 @@ public final class SelfInfoEditAct_
             }
         }
         {
-            View view = hasViews.findViewById(id.view_address);
+            View view = hasViews.findViewById(id.text_birthday);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        SelfInfoEditAct_.this.clickAddress();
+                        SelfInfoEditAct_.this.clickBirthday();
                     }
 
                 }
@@ -148,32 +163,17 @@ public final class SelfInfoEditAct_
                 );
             }
         }
-        {
-            View view = hasViews.findViewById(id.text_birthday);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        SelfInfoEditAct_.this.clickBirthday();
-                    }
-
-                }
-                );
-            }
-        }
         init();
     }
 
     @Override
-    public void closeLoading() {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfInfoEditAct_.super.closeLoading();
+                SelfInfoEditAct_.super.showLoading(tip);
             }
 
         }
@@ -181,13 +181,13 @@ public final class SelfInfoEditAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfInfoEditAct_.super.fullScreen(arg0);
+                SelfInfoEditAct_.super.showToast(content);
             }
 
         }
@@ -195,13 +195,13 @@ public final class SelfInfoEditAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfInfoEditAct_.super.showLoading(arg0);
+                SelfInfoEditAct_.super.fullScreen(enable);
             }
 
         }
@@ -223,13 +223,27 @@ public final class SelfInfoEditAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void closeLoading() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfInfoEditAct_.super.showToast(arg0);
+                SelfInfoEditAct_.super.closeLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onApiException(final ApiException ex) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfInfoEditAct_.super.onApiException(ex);
             }
 
         }
@@ -251,13 +265,13 @@ public final class SelfInfoEditAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void doOk() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfInfoEditAct_.super.onApiException(arg0);
+                SelfInfoEditAct_.super.doOk();
             }
 
         }
@@ -272,20 +286,6 @@ public final class SelfInfoEditAct_
             @Override
             public void run() {
                 SelfInfoEditAct_.super.initView();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void doOk() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfInfoEditAct_.super.doOk();
             }
 
         }
@@ -325,14 +325,14 @@ public final class SelfInfoEditAct_
     }
 
     @Override
-    public void saveMyBitmap(final String fileName, final Bitmap mBitmap, final int quality) {
+    public void showHead() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    SelfInfoEditAct_.super.saveMyBitmap(fileName, mBitmap, quality);
+                    SelfInfoEditAct_.super.showHead();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -361,14 +361,14 @@ public final class SelfInfoEditAct_
     }
 
     @Override
-    public void showHead() {
+    public void saveMyBitmap(final String fileName, final Bitmap mBitmap, final int quality) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    SelfInfoEditAct_.super.showHead();
+                    SelfInfoEditAct_.super.saveMyBitmap(fileName, mBitmap, quality);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

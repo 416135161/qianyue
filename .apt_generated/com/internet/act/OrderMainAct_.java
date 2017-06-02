@@ -19,8 +19,8 @@ import android.widget.TextView;
 import com.internet.entity.OrderEntity;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.response.GetOrderCalendarResponse.OrderCalendar;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -79,47 +79,19 @@ public final class OrderMainAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_no_data = ((TextView) hasViews.findViewById(id.text_no_data));
         mListView = ((ListView) hasViews.findViewById(id.mListView));
+        text_no_data = ((TextView) hasViews.findViewById(id.text_no_data));
         init();
     }
 
     @Override
-    public void showLoading() {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                OrderMainAct_.super.showLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                OrderMainAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                OrderMainAct_.super.fullScreen(arg0);
+                OrderMainAct_.super.showToast(content);
             }
 
         }
@@ -141,20 +113,6 @@ public final class OrderMainAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                OrderMainAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void closeLoading() {
         handler_.post(new Runnable() {
 
@@ -169,13 +127,69 @@ public final class OrderMainAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                OrderMainAct_.super.onApiException(arg0);
+                OrderMainAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                OrderMainAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                OrderMainAct_.super.showLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                OrderMainAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showEmpoty() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                OrderMainAct_.super.showEmpoty();
             }
 
         }
@@ -225,20 +239,6 @@ public final class OrderMainAct_
     }
 
     @Override
-    public void showEmpoty() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                OrderMainAct_.super.showEmpoty();
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void doBack() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
@@ -257,14 +257,14 @@ public final class OrderMainAct_
     }
 
     @Override
-    public void doQueryOrderList(final String date) {
+    public void getOrderCalendar() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    OrderMainAct_.super.doQueryOrderList(date);
+                    OrderMainAct_.super.getOrderCalendar();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -275,14 +275,14 @@ public final class OrderMainAct_
     }
 
     @Override
-    public void getOrderCalendar() {
+    public void doQueryOrderList(final String date) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    OrderMainAct_.super.getOrderCalendar();
+                    OrderMainAct_.super.doQueryOrderList(date);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

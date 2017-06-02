@@ -47,7 +47,7 @@ import com.internet.http.data.response.ScheduleResponse.ResultBean.PulishDatesBe
 import com.internet.http.data.response.ScheduleResponse.ResultBean.TimeOfDaysBean;
 import com.internet.http.data.vo.TimeOfDayVOs;
 import com.internet.http.data.vo.UserInfoVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.DateHelper;
 import com.internet.view.CalendarCustomView;
 import com.internet.view.CalendarCustomView.CalendarBean;

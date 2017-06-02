@@ -8,8 +8,8 @@ package com.internet.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -79,8 +79,8 @@ public final class ListItemCalenderView_
     @Override
     public void onViewChanged(HasViews hasViews) {
         mText3 = ((TextView) hasViews.findViewById(id.mText3));
-        mText2 = ((TextView) hasViews.findViewById(id.mText2));
         mText1 = ((TextView) hasViews.findViewById(id.mText1));
+        mText2 = ((TextView) hasViews.findViewById(id.mText2));
         init();
     }
 

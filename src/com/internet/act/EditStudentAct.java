@@ -20,7 +20,7 @@ import com.internet.http.data.post.AddStudentPost;
 import com.internet.http.data.post.EditStudentPost;
 import com.internet.http.data.response.CommonResponse;
 import com.internet.http.data.vo.StudentVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.view.HeaderView;
 
 @EActivity(R.layout.act_edit_student)

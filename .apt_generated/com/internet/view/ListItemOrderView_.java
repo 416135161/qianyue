@@ -8,8 +8,8 @@ package com.internet.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -78,12 +78,12 @@ public final class ListItemOrderView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_total_time = ((TextView) hasViews.findViewById(id.text_total_time));
-        text_no = ((TextView) hasViews.findViewById(id.text_no));
         text_address = ((TextView) hasViews.findViewById(id.text_address));
         text_date = ((TextView) hasViews.findViewById(id.text_date));
         text_state = ((TextView) hasViews.findViewById(id.text_state));
+        text_no = ((TextView) hasViews.findViewById(id.text_no));
         text_money = ((TextView) hasViews.findViewById(id.text_money));
+        text_total_time = ((TextView) hasViews.findViewById(id.text_total_time));
         init();
     }
 

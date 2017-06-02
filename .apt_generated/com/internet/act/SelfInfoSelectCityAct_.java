@@ -19,7 +19,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Spinner;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.vo.AreaVO;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -79,32 +79,12 @@ public final class SelfInfoSelectCityAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mProvince = ((Spinner) hasViews.findViewById(com.internet.turnright.b.R.id.mProvince));
-        mCity = ((Spinner) hasViews.findViewById(com.internet.turnright.b.R.id.mCity));
-        mArea = ((Spinner) hasViews.findViewById(com.internet.turnright.b.R.id.mArea));
-        view_header = ((HeaderView) hasViews.findViewById(com.internet.turnright.b.R.id.view_header));
+        mCity = ((Spinner) hasViews.findViewById(com.internet.qianyue.R.id.mCity));
+        mArea = ((Spinner) hasViews.findViewById(com.internet.qianyue.R.id.mArea));
+        view_header = ((HeaderView) hasViews.findViewById(com.internet.qianyue.R.id.view_header));
+        mProvince = ((Spinner) hasViews.findViewById(com.internet.qianyue.R.id.mProvince));
         {
-            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.turnright.b.R.id.mCity));
-            if (view!= null) {
-                view.setOnItemSelectedListener(new OnItemSelectedListener() {
-
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-                        itemSelectCity(false, -1);
-                    }
-
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        SelfInfoSelectCityAct_.this.itemSelectCity(true, position);
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.turnright.b.R.id.mProvince));
+            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.qianyue.R.id.mProvince));
             if (view!= null) {
                 view.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -124,7 +104,27 @@ public final class SelfInfoSelectCityAct_
             }
         }
         {
-            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.turnright.b.R.id.mArea));
+            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.qianyue.R.id.mCity));
+            if (view!= null) {
+                view.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        itemSelectCity(false, -1);
+                    }
+
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        SelfInfoSelectCityAct_.this.itemSelectCity(true, position);
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.qianyue.R.id.mArea));
             if (view!= null) {
                 view.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -147,55 +147,13 @@ public final class SelfInfoSelectCityAct_
     }
 
     @Override
-    public void closeLoading() {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfInfoSelectCityAct_.super.closeLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfInfoSelectCityAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfInfoSelectCityAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfInfoSelectCityAct_.super.showLoading(arg0);
+                SelfInfoSelectCityAct_.super.showLoading(tip);
             }
 
         }
@@ -217,13 +175,55 @@ public final class SelfInfoSelectCityAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfInfoSelectCityAct_.super.fullScreen(arg0);
+                SelfInfoSelectCityAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfInfoSelectCityAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfInfoSelectCityAct_.super.closeLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfInfoSelectCityAct_.super.fullScreen(enable);
             }
 
         }
@@ -245,13 +245,13 @@ public final class SelfInfoSelectCityAct_
     }
 
     @Override
-    public void showCity(final ArrayList<AreaVO> listCityVO) {
+    public void showArea(final ArrayList<AreaVO> listAreaVO) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfInfoSelectCityAct_.super.showCity(listCityVO);
+                SelfInfoSelectCityAct_.super.showArea(listAreaVO);
             }
 
         }
@@ -273,13 +273,13 @@ public final class SelfInfoSelectCityAct_
     }
 
     @Override
-    public void showArea(final ArrayList<AreaVO> listAreaVO) {
+    public void showCity(final ArrayList<AreaVO> listCityVO) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfInfoSelectCityAct_.super.showArea(listAreaVO);
+                SelfInfoSelectCityAct_.super.showCity(listCityVO);
             }
 
         }

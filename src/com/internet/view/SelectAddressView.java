@@ -2,7 +2,7 @@ package com.internet.view;
 
 import org.androidannotations.annotations.EViewGroup;
 
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 import android.content.Context;
 import android.util.AttributeSet;

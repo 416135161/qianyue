@@ -16,8 +16,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -77,9 +77,9 @@ public final class SelfSafeAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         mEdit_code = ((EditText) hasViews.findViewById(id.mEdit_code));
         mEdit_mobile = ((EditText) hasViews.findViewById(id.mEdit_mobile));
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         {
             View view = hasViews.findViewById(id.btn_acquire);
             if (view!= null) {
@@ -114,62 +114,6 @@ public final class SelfSafeAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfSafeAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfSafeAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfSafeAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfSafeAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void closeLoading() {
         handler_.post(new Runnable() {
 
@@ -177,6 +121,62 @@ public final class SelfSafeAct_
             @Override
             public void run() {
                 SelfSafeAct_.super.closeLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfSafeAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfSafeAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfSafeAct_.super.showLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onApiException(final ApiException ex) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfSafeAct_.super.onApiException(ex);
             }
 
         }
@@ -198,13 +198,13 @@ public final class SelfSafeAct_
     }
 
     @Override
-    public void showLoading() {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfSafeAct_.super.showLoading();
+                SelfSafeAct_.super.fullScreen(enable);
             }
 
         }
@@ -230,14 +230,14 @@ public final class SelfSafeAct_
     }
 
     @Override
-    public void sendCode() {
+    public void doSave() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    SelfSafeAct_.super.sendCode();
+                    SelfSafeAct_.super.doSave();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -248,14 +248,14 @@ public final class SelfSafeAct_
     }
 
     @Override
-    public void doSave() {
+    public void sendCode() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    SelfSafeAct_.super.doSave();
+                    SelfSafeAct_.super.sendCode();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

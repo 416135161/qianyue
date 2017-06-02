@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.internet.basic.AdapterView;
 import com.internet.entity.MessageEntity;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.DateTimeUtil;
 import com.internet.util.DensityUtil;
 

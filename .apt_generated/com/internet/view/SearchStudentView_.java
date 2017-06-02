@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -72,9 +72,9 @@ public final class SearchStudentView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_search = ((TextView) hasViews.findViewById(id.text_search));
         edit_search = ((EditText) hasViews.findViewById(id.edit_search));
         text_cancel = ((TextView) hasViews.findViewById(id.text_cancel));
+        text_search = ((TextView) hasViews.findViewById(id.text_search));
         {
             View view = hasViews.findViewById(id.view_inflate);
             if (view!= null) {

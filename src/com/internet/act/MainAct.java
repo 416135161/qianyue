@@ -49,7 +49,7 @@ import com.internet.http.data.post.GetMessageQuntityPost;
 import com.internet.http.data.response.GetBannerResponse;
 import com.internet.http.data.response.GetBannerResponse.Banner;
 import com.internet.http.data.vo.UserInfoVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.FileUtils;
 import com.internet.util.PicUtil;
 import com.internet.view.MainBottomItemView;

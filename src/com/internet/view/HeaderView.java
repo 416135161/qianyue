@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 @EViewGroup(R.layout.view_header)
 public class HeaderView extends RelativeLayout {

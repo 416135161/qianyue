@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -93,10 +93,10 @@ public final class HeaderView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        image_back = ((ImageView) hasViews.findViewById(id.image_back));
         image_header_right = ((ImageView) hasViews.findViewById(id.image_header_right));
         text_header_right = ((TextView) hasViews.findViewById(id.text_header_right));
         text_title = ((TextView) hasViews.findViewById(id.text_title));
-        image_back = ((ImageView) hasViews.findViewById(id.image_back));
         {
             View view = hasViews.findViewById(id.image_back);
             if (view!= null) {

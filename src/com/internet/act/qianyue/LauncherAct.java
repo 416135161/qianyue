@@ -6,7 +6,7 @@ import org.androidannotations.annotations.UiThread;
 import android.os.Bundle;
 
 import com.internet.basic.BasicActivity;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateResponse;

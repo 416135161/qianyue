@@ -7,7 +7,7 @@ package com.internet.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;

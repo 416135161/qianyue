@@ -35,7 +35,7 @@ import com.internet.http.data.post.DeleteStudentPost;
 import com.internet.http.data.post.GetStudentListPost;
 import com.internet.http.data.response.GetStudentListResponse;
 import com.internet.http.data.vo.StudentVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.DensityUtil;
 import com.internet.view.ListItemStudentView_;
 import com.internet.view.SearchStudentView;

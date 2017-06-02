@@ -9,12 +9,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class Fragment1_
     extends Fragment1
-    implements HasViews
+    implements HasViews, OnViewChangedListener
 {
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
@@ -38,10 +40,14 @@ public final class Fragment1_
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         contentView_ = super.onCreateView(inflater, container, savedInstanceState);
+        if (contentView_ == null) {
+            contentView_ = inflater.inflate(layout.fragment_1, container, false);
+        }
         return contentView_;
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
 
     @Override
@@ -52,6 +58,11 @@ public final class Fragment1_
 
     public static Fragment1_.FragmentBuilder_ builder() {
         return new Fragment1_.FragmentBuilder_();
+    }
+
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        init();
     }
 
     public static class FragmentBuilder_ {

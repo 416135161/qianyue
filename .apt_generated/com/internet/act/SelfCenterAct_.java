@@ -17,8 +17,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.CircleImageView;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
@@ -79,26 +79,11 @@ public final class SelfCenterAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         text_teacher_state = ((TextView) hasViews.findViewById(id.text_teacher_state));
-        text_phone = ((TextView) hasViews.findViewById(id.text_phone));
         image_header = ((CircleImageView) hasViews.findViewById(id.image_header));
         text_name = ((TextView) hasViews.findViewById(id.text_name));
-        {
-            View view = hasViews.findViewById(id.view_teacher);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        SelfCenterAct_.this.clickTeacher();
-                    }
-
-                }
-                );
-            }
-        }
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
+        text_phone = ((TextView) hasViews.findViewById(id.text_phone));
         {
             View view = hasViews.findViewById(id.view_self);
             if (view!= null) {
@@ -108,6 +93,21 @@ public final class SelfCenterAct_
                     @Override
                     public void onClick(View view) {
                         SelfCenterAct_.this.clickSelf();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.view_teacher);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        SelfCenterAct_.this.clickTeacher();
                     }
 
                 }
@@ -178,41 +178,13 @@ public final class SelfCenterAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfCenterAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfCenterAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfCenterAct_.super.fullScreen(arg0);
+                SelfCenterAct_.super.onApiException(ex);
             }
 
         }
@@ -234,34 +206,6 @@ public final class SelfCenterAct_
     }
 
     @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfCenterAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfCenterAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void showLoading() {
         handler_.post(new Runnable() {
 
@@ -276,13 +220,55 @@ public final class SelfCenterAct_
     }
 
     @Override
-    public void showHead(final boolean isShow, final Bitmap bitmap) {
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfCenterAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfCenterAct_.super.showHead(isShow, bitmap);
+                SelfCenterAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfCenterAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfCenterAct_.super.showLoading(tip);
             }
 
         }
@@ -297,6 +283,20 @@ public final class SelfCenterAct_
             @Override
             public void run() {
                 SelfCenterAct_.super.initUserView();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showHead(final boolean isShow, final Bitmap bitmap) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfCenterAct_.super.showHead(isShow, bitmap);
             }
 
         }

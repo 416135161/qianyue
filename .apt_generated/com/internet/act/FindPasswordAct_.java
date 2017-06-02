@@ -19,8 +19,8 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -80,11 +80,26 @@ public final class FindPasswordAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
-        mEdit_code = ((EditText) hasViews.findViewById(id.mEdit_code));
-        mEdit_pwd = ((EditText) hasViews.findViewById(id.mEdit_pwd));
         btn_acquire = ((Button) hasViews.findViewById(id.btn_acquire));
+        mEdit_pwd = ((EditText) hasViews.findViewById(id.mEdit_pwd));
+        mEdit_code = ((EditText) hasViews.findViewById(id.mEdit_code));
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         mEdit_mobile = ((EditText) hasViews.findViewById(id.mEdit_mobile));
+        {
+            View view = hasViews.findViewById(id.btn_acquire);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        FindPasswordAct_.this.acquire();
+                    }
+
+                }
+                );
+            }
+        }
         {
             View view = hasViews.findViewById(id.text_cancel);
             if (view!= null) {
@@ -116,21 +131,6 @@ public final class FindPasswordAct_
             }
         }
         {
-            View view = hasViews.findViewById(id.btn_acquire);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        FindPasswordAct_.this.acquire();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             CompoundButton view = ((CompoundButton) hasViews.findViewById(id.check_showpwd));
             if (view!= null) {
                 view.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -149,69 +149,13 @@ public final class FindPasswordAct_
     }
 
     @Override
-    public void showLoading() {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                FindPasswordAct_.super.showLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                FindPasswordAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                FindPasswordAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                FindPasswordAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void closeLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                FindPasswordAct_.super.closeLoading();
+                FindPasswordAct_.super.onApiException(ex);
             }
 
         }
@@ -233,13 +177,83 @@ public final class FindPasswordAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void showLoading() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                FindPasswordAct_.super.fullScreen(arg0);
+                FindPasswordAct_.super.showLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                FindPasswordAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                FindPasswordAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                FindPasswordAct_.super.closeLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                FindPasswordAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void goToRegistDspAct() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                FindPasswordAct_.super.goToRegistDspAct();
             }
 
         }
@@ -286,20 +300,6 @@ public final class FindPasswordAct_
 
         }
         , 1000L);
-    }
-
-    @Override
-    public void goToRegistDspAct() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                FindPasswordAct_.super.goToRegistDspAct();
-            }
-
-        }
-        );
     }
 
     @Override

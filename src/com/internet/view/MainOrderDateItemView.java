@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.internet.action.ActionOrderDateClick;
 import com.internet.action.ActionToday;
 import com.internet.http.data.response.GetOrderCalendarResponse.OrderCalendar;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 import de.greenrobot.event.EventBus;
 

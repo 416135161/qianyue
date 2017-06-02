@@ -22,7 +22,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.vo.SelectSysTypeVO;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import com.internet.view.PaperItemView;
 import org.androidannotations.api.BackgroundExecutor;
@@ -83,19 +83,19 @@ public final class SelfTeacherEditAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_carNo = ((EditText) hasViews.findViewById(com.internet.turnright.b.R.id.text_carNo));
-        paper5 = ((PaperItemView) hasViews.findViewById(com.internet.turnright.b.R.id.paper5));
-        paper3 = ((PaperItemView) hasViews.findViewById(com.internet.turnright.b.R.id.paper3));
-        text_no = ((EditText) hasViews.findViewById(com.internet.turnright.b.R.id.text_no));
-        text_name = ((EditText) hasViews.findViewById(com.internet.turnright.b.R.id.text_name));
-        paper4 = ((PaperItemView) hasViews.findViewById(com.internet.turnright.b.R.id.paper4));
-        paper2 = ((PaperItemView) hasViews.findViewById(com.internet.turnright.b.R.id.paper2));
-        paper6 = ((PaperItemView) hasViews.findViewById(com.internet.turnright.b.R.id.paper6));
-        mCarType = ((Spinner) hasViews.findViewById(com.internet.turnright.b.R.id.mCarType));
-        view_header = ((HeaderView) hasViews.findViewById(com.internet.turnright.b.R.id.view_header));
-        paper1 = ((PaperItemView) hasViews.findViewById(com.internet.turnright.b.R.id.paper1));
+        paper6 = ((PaperItemView) hasViews.findViewById(com.internet.qianyue.R.id.paper6));
+        paper3 = ((PaperItemView) hasViews.findViewById(com.internet.qianyue.R.id.paper3));
+        paper2 = ((PaperItemView) hasViews.findViewById(com.internet.qianyue.R.id.paper2));
+        mCarType = ((Spinner) hasViews.findViewById(com.internet.qianyue.R.id.mCarType));
+        text_name = ((EditText) hasViews.findViewById(com.internet.qianyue.R.id.text_name));
+        paper4 = ((PaperItemView) hasViews.findViewById(com.internet.qianyue.R.id.paper4));
+        text_carNo = ((EditText) hasViews.findViewById(com.internet.qianyue.R.id.text_carNo));
+        paper1 = ((PaperItemView) hasViews.findViewById(com.internet.qianyue.R.id.paper1));
+        paper5 = ((PaperItemView) hasViews.findViewById(com.internet.qianyue.R.id.paper5));
+        text_no = ((EditText) hasViews.findViewById(com.internet.qianyue.R.id.text_no));
+        view_header = ((HeaderView) hasViews.findViewById(com.internet.qianyue.R.id.view_header));
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.text_header_right);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.text_header_right);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -110,7 +110,7 @@ public final class SelfTeacherEditAct_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.paper1);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.paper1);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -125,7 +125,7 @@ public final class SelfTeacherEditAct_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.paper2);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.paper2);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -140,7 +140,7 @@ public final class SelfTeacherEditAct_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.paper3);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.paper3);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -155,7 +155,7 @@ public final class SelfTeacherEditAct_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.paper4);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.paper4);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -170,7 +170,7 @@ public final class SelfTeacherEditAct_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.paper5);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.paper5);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -185,7 +185,7 @@ public final class SelfTeacherEditAct_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.paper6);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.paper6);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -200,7 +200,7 @@ public final class SelfTeacherEditAct_
             }
         }
         {
-            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.turnright.b.R.id.mCarType));
+            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.qianyue.R.id.mCarType));
             if (view!= null) {
                 view.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -223,6 +223,48 @@ public final class SelfTeacherEditAct_
     }
 
     @Override
+    public void showLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfTeacherEditAct_.super.showLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onApiException(final ApiException ex) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfTeacherEditAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfTeacherEditAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void closeInputKeyboard() {
         handler_.postDelayed(new Runnable() {
 
@@ -234,20 +276,6 @@ public final class SelfTeacherEditAct_
 
         }
         , 200L);
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfTeacherEditAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
     }
 
     @Override
@@ -265,13 +293,13 @@ public final class SelfTeacherEditAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfTeacherEditAct_.super.onApiException(arg0);
+                SelfTeacherEditAct_.super.showLoading(tip);
             }
 
         }
@@ -279,83 +307,13 @@ public final class SelfTeacherEditAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelfTeacherEditAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfTeacherEditAct_.super.showLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfTeacherEditAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void submit() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfTeacherEditAct_.super.submit();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void doOk() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfTeacherEditAct_.super.doOk();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void initView() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelfTeacherEditAct_.super.initView();
+                SelfTeacherEditAct_.super.fullScreen(enable);
             }
 
         }
@@ -391,6 +349,48 @@ public final class SelfTeacherEditAct_
     }
 
     @Override
+    public void submit() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfTeacherEditAct_.super.submit();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void initView() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfTeacherEditAct_.super.initView();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void doOk() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelfTeacherEditAct_.super.doOk();
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void doBack() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
@@ -399,60 +399,6 @@ public final class SelfTeacherEditAct_
             public void execute() {
                 try {
                     SelfTeacherEditAct_.super.doBack();
-                } catch (Throwable e) {
-                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
-                }
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void getCarType() {
-        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
-
-
-            @Override
-            public void execute() {
-                try {
-                    SelfTeacherEditAct_.super.getCarType();
-                } catch (Throwable e) {
-                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
-                }
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void getAuthInfo() {
-        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
-
-
-            @Override
-            public void execute() {
-                try {
-                    SelfTeacherEditAct_.super.getAuthInfo();
-                } catch (Throwable e) {
-                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
-                }
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void submitPhoto(final int index) {
-        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
-
-
-            @Override
-            public void execute() {
-                try {
-                    SelfTeacherEditAct_.super.submitPhoto(index);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -481,14 +427,50 @@ public final class SelfTeacherEditAct_
     }
 
     @Override
-    public void doSubmit() {
+    public void getCarType() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    SelfTeacherEditAct_.super.doSubmit();
+                    SelfTeacherEditAct_.super.getCarType();
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void submitPhoto(final int index) {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    SelfTeacherEditAct_.super.submitPhoto(index);
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void getAuthInfo() {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    SelfTeacherEditAct_.super.getAuthInfo();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -507,6 +489,24 @@ public final class SelfTeacherEditAct_
             public void execute() {
                 try {
                     SelfTeacherEditAct_.super.saveMyBitmap(fileName, mBitmap, quality);
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void doSubmit() {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    SelfTeacherEditAct_.super.doSubmit();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

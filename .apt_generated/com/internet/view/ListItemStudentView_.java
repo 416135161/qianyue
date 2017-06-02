@@ -8,8 +8,8 @@ package com.internet.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -79,8 +79,8 @@ public final class ListItemStudentView_
     @Override
     public void onViewChanged(HasViews hasViews) {
         text_phone = ((TextView) hasViews.findViewById(id.text_phone));
-        text_type = ((TextView) hasViews.findViewById(id.text_type));
         text_name = ((TextView) hasViews.findViewById(id.text_name));
+        text_type = ((TextView) hasViews.findViewById(id.text_type));
         init();
     }
 

@@ -11,8 +11,8 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.widget.EditText;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -70,9 +70,9 @@ public final class SearchSiteView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_search = ((TextView) hasViews.findViewById(id.text_search));
-        edit_search = ((EditText) hasViews.findViewById(id.edit_search));
         text_cancel = ((TextView) hasViews.findViewById(id.text_cancel));
+        edit_search = ((EditText) hasViews.findViewById(id.edit_search));
+        text_search = ((TextView) hasViews.findViewById(id.text_search));
         {
             final TextView view = ((TextView) hasViews.findViewById(id.edit_search));
             if (view!= null) {

@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.internet.basic.BasicFragment;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 @EFragment
 public class Fragment3 extends BasicFragment {

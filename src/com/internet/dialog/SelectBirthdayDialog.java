@@ -8,7 +8,7 @@ import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 
 import com.internet.action.ActionSelectBirthday;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 import de.greenrobot.event.EventBus;
 

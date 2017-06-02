@@ -19,8 +19,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.vo.OrderDetailVO;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.CircleImageView;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
@@ -81,33 +81,18 @@ public final class OrderDetailAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_1_3 = ((TextView) hasViews.findViewById(id.text_1_3));
-        text_name = ((TextView) hasViews.findViewById(id.text_name));
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
-        text_2_2 = ((TextView) hasViews.findViewById(id.text_2_2));
-        text_1_4 = ((TextView) hasViews.findViewById(id.text_1_4));
         text_phone = ((TextView) hasViews.findViewById(id.text_phone));
-        image_phone = ((ImageView) hasViews.findViewById(id.image_phone));
-        text_2_3 = ((TextView) hasViews.findViewById(id.text_2_3));
-        image_photo = ((CircleImageView) hasViews.findViewById(id.image_photo));
         text_1_1 = ((TextView) hasViews.findViewById(id.text_1_1));
-        text_1_2 = ((TextView) hasViews.findViewById(id.text_1_2));
+        text_1_4 = ((TextView) hasViews.findViewById(id.text_1_4));
+        text_2_3 = ((TextView) hasViews.findViewById(id.text_2_3));
+        text_2_2 = ((TextView) hasViews.findViewById(id.text_2_2));
         text_2_1 = ((TextView) hasViews.findViewById(id.text_2_1));
-        {
-            View view = hasViews.findViewById(id.btn_save);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        OrderDetailAct_.this.clickSave();
-                    }
-
-                }
-                );
-            }
-        }
+        text_1_3 = ((TextView) hasViews.findViewById(id.text_1_3));
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
+        image_phone = ((ImageView) hasViews.findViewById(id.image_phone));
+        text_1_2 = ((TextView) hasViews.findViewById(id.text_1_2));
+        text_name = ((TextView) hasViews.findViewById(id.text_name));
+        image_photo = ((CircleImageView) hasViews.findViewById(id.image_photo));
         {
             View view = hasViews.findViewById(id.image_phone);
             if (view!= null) {
@@ -123,49 +108,22 @@ public final class OrderDetailAct_
                 );
             }
         }
+        {
+            View view = hasViews.findViewById(id.btn_save);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        OrderDetailAct_.this.clickSave();
+                    }
+
+                }
+                );
+            }
+        }
         init();
-    }
-
-    @Override
-    public void showLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                OrderDetailAct_.super.showLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                OrderDetailAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                OrderDetailAct_.super.showToast(arg0);
-            }
-
-        }
-        );
     }
 
     @Override
@@ -183,13 +141,41 @@ public final class OrderDetailAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                OrderDetailAct_.super.showLoading(arg0);
+                OrderDetailAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                OrderDetailAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                OrderDetailAct_.super.showLoading();
             }
 
         }
@@ -211,13 +197,27 @@ public final class OrderDetailAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                OrderDetailAct_.super.onApiException(arg0);
+                OrderDetailAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onApiException(final ApiException ex) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                OrderDetailAct_.super.onApiException(ex);
             }
 
         }
@@ -271,14 +271,14 @@ public final class OrderDetailAct_
     }
 
     @Override
-    public void takeInOrder() {
+    public void showHead(final String url) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    OrderDetailAct_.super.takeInOrder();
+                    OrderDetailAct_.super.showHead(url);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -289,14 +289,14 @@ public final class OrderDetailAct_
     }
 
     @Override
-    public void showHead(final String url) {
+    public void takeInOrder() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    OrderDetailAct_.super.showHead(url);
+                    OrderDetailAct_.super.takeInOrder();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

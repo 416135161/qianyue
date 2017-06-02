@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.internet.http.data.response.GetOrderCalendarResponse.OrderCalendar;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 public class OrderDateTitle{
 	View mView;

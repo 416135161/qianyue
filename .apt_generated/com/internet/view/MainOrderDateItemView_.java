@@ -8,8 +8,8 @@ package com.internet.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -78,9 +78,9 @@ public final class MainOrderDateItemView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        order_quantity = ((TextView) hasViews.findViewById(id.order_quantity));
         text_date = ((TextView) hasViews.findViewById(id.text_date));
         text_today = ((TextView) hasViews.findViewById(id.text_today));
+        order_quantity = ((TextView) hasViews.findViewById(id.order_quantity));
         init();
     }
 

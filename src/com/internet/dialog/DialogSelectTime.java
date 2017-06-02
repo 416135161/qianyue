@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TimePicker;
 
 import com.internet.action.ActionSelectTime;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 import de.greenrobot.event.EventBus;
 

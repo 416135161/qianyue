@@ -23,7 +23,7 @@ import android.widget.TextView;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.vo.StudentVO;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import com.internet.view.SearchStudentView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.SdkVersionHelper;
@@ -92,87 +92,12 @@ public final class MyStudentAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        layout_search = ((SearchStudentView) hasViews.findViewById(com.internet.turnright.b.R.id.layout_search));
-        mListView = ((SwipeMenuListView) hasViews.findViewById(com.internet.turnright.b.R.id.mListView));
-        edit_search = ((EditText) hasViews.findViewById(com.internet.turnright.b.R.id.edit_search));
-        text_no_data = ((TextView) hasViews.findViewById(com.internet.turnright.b.R.id.text_no_data));
+        mListView = ((SwipeMenuListView) hasViews.findViewById(com.internet.qianyue.R.id.mListView));
+        text_no_data = ((TextView) hasViews.findViewById(com.internet.qianyue.R.id.text_no_data));
+        edit_search = ((EditText) hasViews.findViewById(com.internet.qianyue.R.id.edit_search));
+        layout_search = ((SearchStudentView) hasViews.findViewById(com.internet.qianyue.R.id.layout_search));
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.view_title_right);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MyStudentAct_.this.clickTitleRight();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.view_search);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MyStudentAct_.this.clickSearch();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.text_cancel);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MyStudentAct_.this.clickSearchCancel();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.view_title_left);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MyStudentAct_.this.clickTitleLeft();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.image_add);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MyStudentAct_.this.clickAdd();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.image_back);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.image_back);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -187,7 +112,22 @@ public final class MyStudentAct_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.text_search);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.view_title_right);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MyStudentAct_.this.clickTitleRight();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.text_search);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -202,7 +142,67 @@ public final class MyStudentAct_
             }
         }
         {
-            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.turnright.b.R.id.mListView));
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.image_add);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MyStudentAct_.this.clickAdd();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.view_search);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MyStudentAct_.this.clickSearch();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.text_cancel);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MyStudentAct_.this.clickSearchCancel();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.view_title_left);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MyStudentAct_.this.clickTitleLeft();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(com.internet.qianyue.R.id.mListView));
             if (view!= null) {
                 view.setOnItemClickListener(new OnItemClickListener() {
 
@@ -220,6 +220,62 @@ public final class MyStudentAct_
     }
 
     @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyStudentAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyStudentAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onApiException(final ApiException ex) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyStudentAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyStudentAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void showLoading() {
         handler_.post(new Runnable() {
 
@@ -227,62 +283,6 @@ public final class MyStudentAct_
             @Override
             public void run() {
                 MyStudentAct_.super.showLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void closeLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyStudentAct_.super.closeLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyStudentAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyStudentAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyStudentAct_.super.fullScreen(arg0);
             }
 
         }
@@ -304,13 +304,13 @@ public final class MyStudentAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void closeLoading() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                MyStudentAct_.super.showToast(arg0);
+                MyStudentAct_.super.closeLoading();
             }
 
         }
@@ -378,14 +378,14 @@ public final class MyStudentAct_
     }
 
     @Override
-    public void getStuentList(final Object noLoading) {
+    public void getStuentList() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    MyStudentAct_.super.getStuentList(noLoading);
+                    MyStudentAct_.super.getStuentList();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -414,14 +414,14 @@ public final class MyStudentAct_
     }
 
     @Override
-    public void getStuentList() {
+    public void getStuentList(final Object noLoading) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    MyStudentAct_.super.getStuentList();
+                    MyStudentAct_.super.getStuentList(noLoading);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

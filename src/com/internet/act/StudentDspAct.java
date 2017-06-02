@@ -43,7 +43,7 @@ import com.internet.http.data.response.GetStudentDetailResponse;
 import com.internet.http.data.vo.StudentDetailVO;
 import com.internet.http.data.vo.StudentDetailVO.UserAppoint;
 import com.internet.http.data.vo.StudentVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.FileUtils;
 import com.internet.util.PicUtil;
 import com.internet.view.HeaderView;

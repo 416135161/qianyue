@@ -20,8 +20,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.response.GetSiteListResponse;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import com.internet.view.SearchSiteView;
 import org.androidannotations.api.BackgroundExecutor;
@@ -97,21 +97,6 @@ public final class SelectSiteAct_
         view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         edit_search = ((EditText) hasViews.findViewById(id.edit_search));
         {
-            View view = hasViews.findViewById(id.view_search);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        SelectSiteAct_.this.clickSearch();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = hasViews.findViewById(id.tv_ok);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -127,14 +112,14 @@ public final class SelectSiteAct_
             }
         }
         {
-            View view = hasViews.findViewById(id.text_search);
+            View view = hasViews.findViewById(id.view_search);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        SelectSiteAct_.this.clickEnsureSearch();
+                        SelectSiteAct_.this.clickSearch();
                     }
 
                 }
@@ -156,17 +141,32 @@ public final class SelectSiteAct_
                 );
             }
         }
+        {
+            View view = hasViews.findViewById(id.text_search);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        SelectSiteAct_.this.clickEnsureSearch();
+                    }
+
+                }
+                );
+            }
+        }
         init();
     }
 
     @Override
-    public void closeLoading() {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelectSiteAct_.super.closeLoading();
+                SelectSiteAct_.super.onApiException(ex);
             }
 
         }
@@ -188,13 +188,13 @@ public final class SelectSiteAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void closeLoading() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelectSiteAct_.super.showLoading(arg0);
+                SelectSiteAct_.super.closeLoading();
             }
 
         }
@@ -202,27 +202,13 @@ public final class SelectSiteAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelectSiteAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                SelectSiteAct_.super.onApiException(arg0);
+                SelectSiteAct_.super.showLoading(tip);
             }
 
         }
@@ -244,13 +230,27 @@ public final class SelectSiteAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                SelectSiteAct_.super.fullScreen(arg0);
+                SelectSiteAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                SelectSiteAct_.super.fullScreen(enable);
             }
 
         }

@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.internet.http.data.response.ScheduleResponse.ResultBean.TimeOfDaysBean;
 import com.internet.util.ToastUtil;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 public class DialogModifyPrice extends Dialog implements
 		android.view.View.OnClickListener {

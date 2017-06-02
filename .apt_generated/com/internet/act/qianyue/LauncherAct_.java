@@ -14,7 +14,7 @@ import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -70,13 +70,13 @@ public final class LauncherAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LauncherAct_.super.showLoading(arg0);
+                LauncherAct_.super.showLoading(tip);
             }
 
         }
@@ -84,13 +84,13 @@ public final class LauncherAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LauncherAct_.super.showToast(arg0);
+                LauncherAct_.super.fullScreen(enable);
             }
 
         }
@@ -98,27 +98,13 @@ public final class LauncherAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LauncherAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                LauncherAct_.super.onApiException(arg0);
+                LauncherAct_.super.showToast(content);
             }
 
         }
@@ -140,6 +126,20 @@ public final class LauncherAct_
     }
 
     @Override
+    public void showLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                LauncherAct_.super.showLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void closeLoading() {
         handler_.post(new Runnable() {
 
@@ -154,13 +154,13 @@ public final class LauncherAct_
     }
 
     @Override
-    public void showLoading() {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LauncherAct_.super.showLoading();
+                LauncherAct_.super.onApiException(ex);
             }
 
         }

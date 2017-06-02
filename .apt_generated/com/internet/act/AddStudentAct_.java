@@ -17,8 +17,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -78,12 +78,12 @@ public final class AddStudentAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        radio_false = ((RadioButton) hasViews.findViewById(id.radio_false));
-        edit_phone = ((EditText) hasViews.findViewById(id.edit_phone));
-        radio_true = ((RadioButton) hasViews.findViewById(id.radio_true));
         view_header = ((HeaderView) hasViews.findViewById(id.view_header));
-        edit_name = ((EditText) hasViews.findViewById(id.edit_name));
         edit_remark = ((EditText) hasViews.findViewById(id.edit_remark));
+        edit_phone = ((EditText) hasViews.findViewById(id.edit_phone));
+        radio_false = ((RadioButton) hasViews.findViewById(id.radio_false));
+        edit_name = ((EditText) hasViews.findViewById(id.edit_name));
+        radio_true = ((RadioButton) hasViews.findViewById(id.radio_true));
         {
             View view = hasViews.findViewById(id.btn_save);
             if (view!= null) {
@@ -103,6 +103,20 @@ public final class AddStudentAct_
     }
 
     @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                AddStudentAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void closeInputKeyboard() {
         handler_.postDelayed(new Runnable() {
 
@@ -114,6 +128,34 @@ public final class AddStudentAct_
 
         }
         , 200L);
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                AddStudentAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                AddStudentAct_.super.showLoading();
+            }
+
+        }
+        );
     }
 
     @Override
@@ -131,13 +173,13 @@ public final class AddStudentAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                AddStudentAct_.super.fullScreen(arg0);
+                AddStudentAct_.super.onApiException(ex);
             }
 
         }
@@ -145,55 +187,13 @@ public final class AddStudentAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                AddStudentAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                AddStudentAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                AddStudentAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                AddStudentAct_.super.showLoading();
+                AddStudentAct_.super.fullScreen(enable);
             }
 
         }

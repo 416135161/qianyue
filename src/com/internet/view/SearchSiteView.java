@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 @EViewGroup(R.layout.view_search_student)
 public class SearchSiteView extends LinearLayout {

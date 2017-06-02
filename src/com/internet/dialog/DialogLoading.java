@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 /**
  * Created by Administrator on 2014-10-17.

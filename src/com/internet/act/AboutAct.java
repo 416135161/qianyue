@@ -19,7 +19,7 @@ import com.internet.http.api.ApiException;
 import com.internet.http.api.ApiManager;
 import com.internet.http.data.response.GetYzwMessageResponse;
 import com.internet.http.data.response.GetYzwMessageResponse.YzwMessage;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.AndroidUtil;
 import com.internet.view.HeaderView;
 import com.umeng.socialize.ShareAction;

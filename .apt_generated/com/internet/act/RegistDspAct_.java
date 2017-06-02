@@ -17,8 +17,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import com.internet.view.ImageTextView;
 import org.androidannotations.api.BackgroundExecutor;
@@ -79,20 +79,20 @@ public final class RegistDspAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        edit_area = ((TextView) hasViews.findViewById(id.edit_area));
+        image_text_4 = ((ImageTextView) hasViews.findViewById(id.image_text_4));
+        image_text_6 = ((ImageTextView) hasViews.findViewById(id.image_text_6));
+        image_text_3 = ((ImageTextView) hasViews.findViewById(id.image_text_3));
+        edit_old = ((EditText) hasViews.findViewById(id.edit_old));
+        edit_address = ((EditText) hasViews.findViewById(id.edit_address));
+        image_text_1 = ((ImageTextView) hasViews.findViewById(id.image_text_1));
         view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         image_text_2 = ((ImageTextView) hasViews.findViewById(id.image_text_2));
-        edit_no = ((EditText) hasViews.findViewById(id.edit_no));
-        image_text_4 = ((ImageTextView) hasViews.findViewById(id.image_text_4));
-        edit_school = ((EditText) hasViews.findViewById(id.edit_school));
-        edit_old = ((EditText) hasViews.findViewById(id.edit_old));
-        image_text_1 = ((ImageTextView) hasViews.findViewById(id.image_text_1));
-        edit_area = ((TextView) hasViews.findViewById(id.edit_area));
-        image_text_6 = ((ImageTextView) hasViews.findViewById(id.image_text_6));
-        edit_model = ((TextView) hasViews.findViewById(id.edit_model));
-        edit_name = ((EditText) hasViews.findViewById(id.edit_name));
-        edit_address = ((EditText) hasViews.findViewById(id.edit_address));
-        image_text_3 = ((ImageTextView) hasViews.findViewById(id.image_text_3));
         image_text_5 = ((ImageTextView) hasViews.findViewById(id.image_text_5));
+        edit_model = ((TextView) hasViews.findViewById(id.edit_model));
+        edit_no = ((EditText) hasViews.findViewById(id.edit_no));
+        edit_school = ((EditText) hasViews.findViewById(id.edit_school));
+        edit_name = ((EditText) hasViews.findViewById(id.edit_name));
         {
             View view = hasViews.findViewById(id.btn_save);
             if (view!= null) {
@@ -112,20 +112,6 @@ public final class RegistDspAct_
     }
 
     @Override
-    public void closeLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                RegistDspAct_.super.closeLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void closeInputKeyboard() {
         handler_.postDelayed(new Runnable() {
 
@@ -137,48 +123,6 @@ public final class RegistDspAct_
 
         }
         , 200L);
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                RegistDspAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                RegistDspAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                RegistDspAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
     }
 
     @Override
@@ -196,13 +140,69 @@ public final class RegistDspAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                RegistDspAct_.super.fullScreen(arg0);
+                RegistDspAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                RegistDspAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                RegistDspAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                RegistDspAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                RegistDspAct_.super.closeLoading();
             }
 
         }

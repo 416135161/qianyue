@@ -18,8 +18,8 @@ import android.widget.TextView;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.internet.entity.MessageEntity;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -79,94 +79,10 @@ public final class MyMessageAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_no_data = ((TextView) hasViews.findViewById(id.text_no_data));
         view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         mListView = ((SwipeMenuListView) hasViews.findViewById(id.listView));
+        text_no_data = ((TextView) hasViews.findViewById(id.text_no_data));
         init();
-    }
-
-    @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyMessageAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
-    }
-
-    @Override
-    public void showLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyMessageAct_.super.showLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyMessageAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyMessageAct_.super.onApiException(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyMessageAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MyMessageAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
     }
 
     @Override
@@ -184,17 +100,87 @@ public final class MyMessageAct_
     }
 
     @Override
-    public void freshListView(final ArrayList<MessageEntity> listData) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                MyMessageAct_.super.freshListView(listData);
+                MyMessageAct_.super.onApiException(ex);
             }
 
         }
         );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyMessageAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyMessageAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyMessageAct_.super.showToast(content);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyMessageAct_.super.showLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyMessageAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
     }
 
     @Override
@@ -205,6 +191,20 @@ public final class MyMessageAct_
             @Override
             public void run() {
                 MyMessageAct_.super.hideEmpoty();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void freshListView(final ArrayList<MessageEntity> listData) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MyMessageAct_.super.freshListView(listData);
             }
 
         }
@@ -244,14 +244,14 @@ public final class MyMessageAct_
     }
 
     @Override
-    public void getListMessage() {
+    public void deleteMessage(final int position) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    MyMessageAct_.super.getListMessage();
+                    MyMessageAct_.super.deleteMessage(position);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -262,14 +262,14 @@ public final class MyMessageAct_
     }
 
     @Override
-    public void deleteMessage(final int position) {
+    public void getListMessage() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    MyMessageAct_.super.deleteMessage(position);
+                    MyMessageAct_.super.getListMessage();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

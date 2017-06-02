@@ -57,7 +57,7 @@ import com.internet.http.api.ApiManager;
 import com.internet.http.data.post.EditSelfInfoPost;
 import com.internet.http.data.post.FindUserPost;
 import com.internet.http.data.vo.UserInfoVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.DateTimeUtil;
 import com.internet.util.FileUtils;
 import com.internet.util.PicUtil;

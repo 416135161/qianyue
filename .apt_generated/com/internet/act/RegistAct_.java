@@ -20,8 +20,8 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -80,27 +80,12 @@ public final class RegistAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mEdit_mobile = ((EditText) hasViews.findViewById(id.mEdit_mobile));
-        mEdit_code = ((EditText) hasViews.findViewById(id.mEdit_code));
         mEdit_pwd = ((EditText) hasViews.findViewById(id.mEdit_pwd));
+        mEdit_code = ((EditText) hasViews.findViewById(id.mEdit_code));
         checkbox = ((CheckBox) hasViews.findViewById(id.checkbox));
         btn_acquire = ((Button) hasViews.findViewById(id.btn_acquire));
         btn_next = ((Button) hasViews.findViewById(id.btn_next));
-        {
-            View view = hasViews.findViewById(id.text_protocol);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        RegistAct_.this.clickProtocol();
-                    }
-
-                }
-                );
-            }
-        }
+        mEdit_mobile = ((EditText) hasViews.findViewById(id.mEdit_mobile));
         {
             View view = hasViews.findViewById(id.btn_next);
             if (view!= null) {
@@ -110,6 +95,21 @@ public final class RegistAct_
                     @Override
                     public void onClick(View view) {
                         RegistAct_.this.next();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.btn_acquire);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        RegistAct_.this.acquire();
                     }
 
                 }
@@ -132,14 +132,14 @@ public final class RegistAct_
             }
         }
         {
-            View view = hasViews.findViewById(id.btn_acquire);
+            View view = hasViews.findViewById(id.text_protocol);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        RegistAct_.this.acquire();
+                        RegistAct_.this.clickProtocol();
                     }
 
                 }
@@ -164,13 +164,13 @@ public final class RegistAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                RegistAct_.super.onApiException(arg0);
+                RegistAct_.super.fullScreen(enable);
             }
 
         }
@@ -178,41 +178,13 @@ public final class RegistAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                RegistAct_.super.showToast(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                RegistAct_.super.showLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                RegistAct_.super.fullScreen(arg0);
+                RegistAct_.super.showToast(content);
             }
 
         }
@@ -248,13 +220,41 @@ public final class RegistAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                RegistAct_.super.showLoading(arg0);
+                RegistAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                RegistAct_.super.showLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                RegistAct_.super.showLoading(tip);
             }
 
         }
@@ -273,20 +273,6 @@ public final class RegistAct_
 
         }
         );
-    }
-
-    @Override
-    public void sendCodeValid() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                RegistAct_.super.sendCodeValid();
-            }
-
-        }
-        , 1000L);
     }
 
     @Override
@@ -315,6 +301,20 @@ public final class RegistAct_
 
         }
         );
+    }
+
+    @Override
+    public void sendCodeValid() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                RegistAct_.super.sendCodeValid();
+            }
+
+        }
+        , 1000L);
     }
 
     @Override

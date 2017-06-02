@@ -14,7 +14,7 @@ import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.LinearLayout;
 
 import com.internet.action.ActionSelectBirthday;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 import de.greenrobot.event.EventBus;
 

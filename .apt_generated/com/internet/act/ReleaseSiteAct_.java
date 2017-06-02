@@ -22,8 +22,8 @@ import android.widget.TextView;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.response.GetCalenderListResponse.DriversCalender;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import com.internet.view.ReleaseSiteDateItemView;
 import org.androidannotations.api.BackgroundExecutor;
@@ -84,49 +84,19 @@ public final class ReleaseSiteAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        date_item6 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item6));
-        date_item3 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item3));
-        date_item1 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item1));
-        date_item4 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item4));
         date_item5 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item5));
-        text_repeat = ((TextView) hasViews.findViewById(id.text_repeat));
         mSwitch = ((CheckBox) hasViews.findViewById(id.mSwitch));
-        date_item2 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item2));
+        date_item4 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item4));
         mListView = ((SwipeMenuListView) hasViews.findViewById(id.listView));
-        text_site = ((TextView) hasViews.findViewById(id.text_site));
-        text_copy = ((TextView) hasViews.findViewById(id.text_copy));
         date_item7 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item7));
+        date_item6 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item6));
         view_header = ((HeaderView) hasViews.findViewById(id.view_header));
-        {
-            View view = hasViews.findViewById(id.image_add);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        ReleaseSiteAct_.this.clickAddTime();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.text_copy);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        ReleaseSiteAct_.this.clickCopy();
-                    }
-
-                }
-                );
-            }
-        }
+        date_item1 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item1));
+        text_site = ((TextView) hasViews.findViewById(id.text_site));
+        text_repeat = ((TextView) hasViews.findViewById(id.text_repeat));
+        date_item2 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item2));
+        date_item3 = ((ReleaseSiteDateItemView) hasViews.findViewById(id.date_item3));
+        text_copy = ((TextView) hasViews.findViewById(id.text_copy));
         {
             View view = hasViews.findViewById(id.date_item1);
             if (view!= null) {
@@ -233,6 +203,36 @@ public final class ReleaseSiteAct_
             }
         }
         {
+            View view = hasViews.findViewById(id.image_add);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ReleaseSiteAct_.this.clickAddTime();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.text_copy);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ReleaseSiteAct_.this.clickCopy();
+                    }
+
+                }
+                );
+            }
+        }
+        {
             View view = hasViews.findViewById(id.view_select_site);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -266,69 +266,13 @@ public final class ReleaseSiteAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSiteAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSiteAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
-    }
-
-    @Override
-    public void showLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSiteAct_.super.showLoading();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSiteAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSiteAct_.super.onApiException(arg0);
+                ReleaseSiteAct_.super.showLoading(tip);
             }
 
         }
@@ -350,13 +294,13 @@ public final class ReleaseSiteAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void showLoading() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSiteAct_.super.showToast(arg0);
+                ReleaseSiteAct_.super.showLoading();
             }
 
         }
@@ -364,13 +308,55 @@ public final class ReleaseSiteAct_
     }
 
     @Override
-    public void refreshListView(final ArrayList<DriversCalender> result) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSiteAct_.super.refreshListView(result);
+                ReleaseSiteAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSiteAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSiteAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSiteAct_.super.showToast(content);
             }
 
         }
@@ -392,6 +378,20 @@ public final class ReleaseSiteAct_
     }
 
     @Override
+    public void refreshListView(final ArrayList<DriversCalender> result) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSiteAct_.super.refreshListView(result);
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void doBack() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
@@ -400,24 +400,6 @@ public final class ReleaseSiteAct_
             public void execute() {
                 try {
                     ReleaseSiteAct_.super.doBack();
-                } catch (Throwable e) {
-                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
-                }
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void oneKeyClose(final boolean isChecked) {
-        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
-
-
-            @Override
-            public void execute() {
-                try {
-                    ReleaseSiteAct_.super.oneKeyClose(isChecked);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -446,14 +428,14 @@ public final class ReleaseSiteAct_
     }
 
     @Override
-    public void getCalenderList(final int position) {
+    public void getAppointDate() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    ReleaseSiteAct_.super.getCalenderList(position);
+                    ReleaseSiteAct_.super.getAppointDate();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -464,14 +446,32 @@ public final class ReleaseSiteAct_
     }
 
     @Override
-    public void getAppointDate() {
+    public void oneKeyClose(final boolean isChecked) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    ReleaseSiteAct_.super.getAppointDate();
+                    ReleaseSiteAct_.super.oneKeyClose(isChecked);
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void getCalenderList(final int position) {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    ReleaseSiteAct_.super.getCalenderList(position);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

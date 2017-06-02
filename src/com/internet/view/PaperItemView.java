@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 /**
  * @Author: ningsj@shishike.com

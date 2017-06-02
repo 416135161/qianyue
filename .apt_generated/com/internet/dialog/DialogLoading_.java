@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -64,8 +64,8 @@ public final class DialogLoading_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        text_tip = ((TextView) hasViews.findViewById(com.internet.turnright.b.R.id.text_tip));
-        mLoading = ((ImageView) hasViews.findViewById(com.internet.turnright.b.R.id.mLoading));
+        text_tip = ((TextView) hasViews.findViewById(com.internet.qianyue.R.id.text_tip));
+        mLoading = ((ImageView) hasViews.findViewById(com.internet.qianyue.R.id.mLoading));
     }
 
     public static class FragmentBuilder_ {

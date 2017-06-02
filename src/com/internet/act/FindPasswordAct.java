@@ -21,7 +21,7 @@ import com.internet.http.api.ApiManager;
 import com.internet.http.data.post.FindPwdPost;
 import com.internet.http.data.post.RegisterPost;
 import com.internet.http.data.post.SendCodePost;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.view.HeaderView;
 
 @EActivity(R.layout.act_find_password)

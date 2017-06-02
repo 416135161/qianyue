@@ -16,8 +16,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -79,6 +79,36 @@ public final class LoginAct_
         mEdit_mobile = ((EditText) hasViews.findViewById(id.mEdit_mobile));
         mEdit_pwd = ((EditText) hasViews.findViewById(id.mEdit_pwd));
         {
+            View view = hasViews.findViewById(id.btn_login);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        LoginAct_.this.login();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.text_find_password);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        LoginAct_.this.findPassword();
+                    }
+
+                }
+                );
+            }
+        }
+        {
             View view = hasViews.findViewById(id.text_regist);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -108,47 +138,17 @@ public final class LoginAct_
                 );
             }
         }
-        {
-            View view = hasViews.findViewById(id.text_find_password);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        LoginAct_.this.findPassword();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.btn_login);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        LoginAct_.this.login();
-                    }
-
-                }
-                );
-            }
-        }
         init();
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LoginAct_.super.showToast(arg0);
+                LoginAct_.super.fullScreen(enable);
             }
 
         }
@@ -156,27 +156,13 @@ public final class LoginAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LoginAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void closeLoading() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                LoginAct_.super.closeLoading();
+                LoginAct_.super.showToast(content);
             }
 
         }
@@ -198,13 +184,13 @@ public final class LoginAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LoginAct_.super.onApiException(arg0);
+                LoginAct_.super.showLoading(tip);
             }
 
         }
@@ -226,13 +212,27 @@ public final class LoginAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                LoginAct_.super.showLoading(arg0);
+                LoginAct_.super.onApiException(ex);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeLoading() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                LoginAct_.super.closeLoading();
             }
 
         }

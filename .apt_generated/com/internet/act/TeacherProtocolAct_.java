@@ -15,8 +15,8 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebView;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -82,31 +82,17 @@ public final class TeacherProtocolAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
 
 
             @Override
             public void run() {
-                TeacherProtocolAct_.super.showLoading(arg0);
+                TeacherProtocolAct_.super.closeInputKeyboard();
             }
 
         }
-        );
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                TeacherProtocolAct_.super.showToast(arg0);
-            }
-
-        }
-        );
+        , 200L);
     }
 
     @Override
@@ -124,17 +110,45 @@ public final class TeacherProtocolAct_
     }
 
     @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                TeacherProtocolAct_.super.closeInputKeyboard();
+                TeacherProtocolAct_.super.showToast(content);
             }
 
         }
-        , 200L);
+        );
+    }
+
+    @Override
+    public void showLoading(final String tip) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                TeacherProtocolAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                TeacherProtocolAct_.super.fullScreen(enable);
+            }
+
+        }
+        );
     }
 
     @Override
@@ -152,27 +166,13 @@ public final class TeacherProtocolAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                TeacherProtocolAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onApiException(final ApiException arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                TeacherProtocolAct_.super.onApiException(arg0);
+                TeacherProtocolAct_.super.onApiException(ex);
             }
 
         }

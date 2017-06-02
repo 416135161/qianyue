@@ -15,7 +15,7 @@ import org.androidannotations.annotations.EActivity;
 import com.internet.action.ActionLoginOK;
 import com.internet.basic.BasicActivity;
 import com.internet.db.SpHelper;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 
 /**
  * @Author: ningsj@shishike.com

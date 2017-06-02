@@ -15,6 +15,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.View;
 import android.widget.TextView;
 
 import com.internet.adapter.FragmentAdapter;
@@ -23,7 +24,7 @@ import com.internet.fragment.Fragment2_;
 import com.internet.fragment.Fragment3_;
 import com.internet.fragment.Fragment4_;
 
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.view.HeaderView;
 
 @EActivity(R.layout.act_poor_people_detail)
@@ -34,6 +35,9 @@ public class PoorPeopleDetailAct extends FragmentActivity {
 
 	@ViewById
 	TextView id_text1, id_text2, id_text3, id_text4;
+
+	@ViewById
+	View id_view1, id_view2, id_view3, id_view4;
 	@ViewById
 	HeaderView view_header;
 
@@ -52,7 +56,8 @@ public class PoorPeopleDetailAct extends FragmentActivity {
 				fragmentList);
 		mPageVp.setAdapter(fragmentAdapter);
 		mPageVp.setCurrentItem(0);
-
+		resetTextView();
+		id_view1.setVisibility(View.VISIBLE);
 		mPageVp.setOnPageChangeListener(new OnPageChangeListener() {
 
 			/**
@@ -78,16 +83,20 @@ public class PoorPeopleDetailAct extends FragmentActivity {
 				resetTextView();
 				switch (position) {
 				case 0:
-					id_text1.setBackgroundColor(Color.BLUE);
+					// id_text1.setBackgroundColor(Color.BLUE);
+					id_view1.setVisibility(View.VISIBLE);
 					break;
 				case 1:
-					id_text2.setBackgroundColor(Color.BLUE);
+					// id_text2.setBackgroundColor(Color.BLUE);
+					id_view2.setVisibility(View.VISIBLE);
 					break;
 				case 2:
-					id_text3.setBackgroundColor(Color.BLUE);
+					// id_text3.setBackgroundColor(Color.BLUE);
+					id_view3.setVisibility(View.VISIBLE);
 					break;
 				case 3:
-					id_text4.setBackgroundColor(Color.BLUE);
+					// id_text4.setBackgroundColor(Color.BLUE);
+					id_view4.setVisibility(View.VISIBLE);
 				}
 
 			}
@@ -119,10 +128,14 @@ public class PoorPeopleDetailAct extends FragmentActivity {
 	 * 重置颜色
 	 */
 	private void resetTextView() {
-		id_text1.setBackgroundColor(Color.WHITE);
-		id_text2.setBackgroundColor(Color.WHITE);
-		id_text3.setBackgroundColor(Color.WHITE);
-		id_text4.setBackgroundColor(Color.WHITE);
+		// id_text1.setBackgroundColor(Color.WHITE);
+		// id_text2.setBackgroundColor(Color.WHITE);
+		// id_text3.setBackgroundColor(Color.WHITE);
+		// id_text4.setBackgroundColor(Color.WHITE);
+		id_view1.setVisibility(View.INVISIBLE);
+		id_view2.setVisibility(View.INVISIBLE);
+		id_view3.setVisibility(View.INVISIBLE);
+		id_view4.setVisibility(View.INVISIBLE);
 	}
 
 }

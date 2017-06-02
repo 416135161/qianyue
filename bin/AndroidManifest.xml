@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.internet.turnright.b"
+    package="com.internet.qianyue"
     android:versionCode="1129"
     android:versionName="1.1.29" >
 
@@ -59,6 +59,10 @@
         <activity android:name="com.internet.act.qianyue.LoginAct_" />
         <activity android:name="com.internet.act.qianyue.PoorPeopleListAct_" />
         <activity android:name="com.internet.act.qianyue.PoorPeopleDetailAct_" />
+        <activity android:name="com.internet.act.qianyue.TownsListAct_" />
+        <activity android:name="com.internet.act.qianyue.VillagesListAct_" />
+        
+       
         
 
         <service
@@ -180,7 +184,7 @@
                 <!-- 接收网络变化 连接/断开 since 1.6.3 -->
                 <action android:name="cn.jpush.android.intent.CONNECTION" />
 
-                <category android:name="com.internet.turnright.b" />
+                <category android:name="com.internet.qianyue" />
             </intent-filter>
         </receiver>
 

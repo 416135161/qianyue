@@ -25,8 +25,8 @@ import android.widget.TextView;
 import com.internet.http.api.ApiException;
 import com.internet.http.data.response.ScheduleResponse.ResultBean;
 import com.internet.http.data.vo.TimeOfDayVOs;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.CalendarCustomView;
 import com.internet.view.HeaderView;
 import com.internet.view.NonScrollGridView;
@@ -97,18 +97,18 @@ public final class PublishAct_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        tv_siteName = ((TextView) hasViews.findViewById(id.tv_siteName));
+        tv_subjectName = ((TextView) hasViews.findViewById(id.tv_subjectName));
+        tv_modify = ((TextView) hasViews.findViewById(id.tv_modify));
         scrollView = ((ScrollView) hasViews.findViewById(id.scrollView));
         view_operate = ((View) hasViews.findViewById(id.view_operate));
-        tv_publish = ((TextView) hasViews.findViewById(id.tv_publish));
-        cb_all = ((CheckBox) hasViews.findViewById(id.cb_all));
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
-        gridView = ((NonScrollGridView) hasViews.findViewById(id.gridView));
-        tv_cancel = ((TextView) hasViews.findViewById(id.tv_cancel));
-        tv_subjectName = ((TextView) hasViews.findViewById(id.tv_subjectName));
-        ccv = ((CalendarCustomView) hasViews.findViewById(id.ccv));
         ll_select_site = ((LinearLayout) hasViews.findViewById(id.ll_select_site));
-        tv_modify = ((TextView) hasViews.findViewById(id.tv_modify));
+        tv_publish = ((TextView) hasViews.findViewById(id.tv_publish));
+        gridView = ((NonScrollGridView) hasViews.findViewById(id.gridView));
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
+        tv_siteName = ((TextView) hasViews.findViewById(id.tv_siteName));
+        cb_all = ((CheckBox) hasViews.findViewById(id.cb_all));
+        tv_cancel = ((TextView) hasViews.findViewById(id.tv_cancel));
+        ccv = ((CalendarCustomView) hasViews.findViewById(id.ccv));
         {
             View view = hasViews.findViewById(id.tv_cancel);
             if (view!= null) {
@@ -203,13 +203,13 @@ public final class PublishAct_
     }
 
     @Override
-    public void closeLoading() {
+    public void showToast(final String content) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                PublishAct_.super.closeLoading();
+                PublishAct_.super.showToast(content);
             }
 
         }
@@ -217,13 +217,13 @@ public final class PublishAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                PublishAct_.super.onApiException(arg0);
+                PublishAct_.super.showLoading(tip);
             }
 
         }
@@ -231,55 +231,13 @@ public final class PublishAct_
     }
 
     @Override
-    public void showLoading(final String arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                PublishAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void fullScreen(final boolean arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                PublishAct_.super.fullScreen(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                PublishAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
-    }
-
-    @Override
-    public void showToast(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                PublishAct_.super.showToast(arg0);
+                PublishAct_.super.onApiException(ex);
             }
 
         }
@@ -301,13 +259,41 @@ public final class PublishAct_
     }
 
     @Override
-    public void hidescrollView() {
+    public void closeLoading() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                PublishAct_.super.hidescrollView();
+                PublishAct_.super.closeLoading();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                PublishAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
+    }
+
+    @Override
+    public void fullScreen(final boolean enable) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                PublishAct_.super.fullScreen(enable);
             }
 
         }
@@ -322,6 +308,20 @@ public final class PublishAct_
             @Override
             public void run() {
                 PublishAct_.super.freshListView(result);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void hidescrollView() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                PublishAct_.super.hidescrollView();
             }
 
         }
@@ -347,24 +347,6 @@ public final class PublishAct_
     }
 
     @Override
-    public void getListMessage(final String date) {
-        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
-
-
-            @Override
-            public void execute() {
-                try {
-                    PublishAct_.super.getListMessage(date);
-                } catch (Throwable e) {
-                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
-                }
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void delschedule(final String strScheduleIds) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
@@ -373,24 +355,6 @@ public final class PublishAct_
             public void execute() {
                 try {
                     PublishAct_.super.delschedule(strScheduleIds);
-                } catch (Throwable e) {
-                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
-                }
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void updateSchedule(final String strScheduleIds, final int price) {
-        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
-
-
-            @Override
-            public void execute() {
-                try {
-                    PublishAct_.super.updateSchedule(strScheduleIds, price);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -427,6 +391,42 @@ public final class PublishAct_
             public void execute() {
                 try {
                     PublishAct_.super.copySchedule();
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void updateSchedule(final String strScheduleIds, final int price) {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    PublishAct_.super.updateSchedule(strScheduleIds, price);
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void getListMessage(final String date) {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    PublishAct_.super.getListMessage(date);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

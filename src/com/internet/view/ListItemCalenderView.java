@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.internet.basic.AdapterView;
 import com.internet.http.data.response.GetCalenderListResponse.DriversCalender;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.DateTimeUtil;
 
 @EViewGroup(value = R.layout.list_item_calender)

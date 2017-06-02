@@ -18,8 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.internet.http.api.ApiException;
-import com.internet.turnright.b.R.id;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.id;
+import com.internet.qianyue.R.layout;
 import com.internet.view.HeaderView;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -80,25 +80,10 @@ public final class ReleaseSelectTimeSelfAct_
     @Override
     public void onViewChanged(HasViews hasViews) {
         time_to = ((TextView) hasViews.findViewById(id.time_to));
-        time_from = ((TextView) hasViews.findViewById(id.time_from));
-        edit_price = ((EditText) hasViews.findViewById(id.edit_price));
-        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         btn_save = ((Button) hasViews.findViewById(id.btn_save));
-        {
-            View view = hasViews.findViewById(id.time_from);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        ReleaseSelectTimeSelfAct_.this.clickTimeFrom();
-                    }
-
-                }
-                );
-            }
-        }
+        edit_price = ((EditText) hasViews.findViewById(id.edit_price));
+        time_from = ((TextView) hasViews.findViewById(id.time_from));
+        view_header = ((HeaderView) hasViews.findViewById(id.view_header));
         {
             View view = hasViews.findViewById(id.btn_save);
             if (view!= null) {
@@ -130,6 +115,21 @@ public final class ReleaseSelectTimeSelfAct_
             }
         }
         {
+            View view = hasViews.findViewById(id.time_from);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ReleaseSelectTimeSelfAct_.this.clickTimeFrom();
+                    }
+
+                }
+                );
+            }
+        }
+        {
             View view = hasViews.findViewById(id.text_header_right);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -148,45 +148,17 @@ public final class ReleaseSelectTimeSelfAct_
     }
 
     @Override
-    public void onApiException(final ApiException arg0) {
+    public void fullScreen(final boolean enable) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSelectTimeSelfAct_.super.onApiException(arg0);
+                ReleaseSelectTimeSelfAct_.super.fullScreen(enable);
             }
 
         }
         );
-    }
-
-    @Override
-    public void showLoading(final String arg0) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSelectTimeSelfAct_.super.showLoading(arg0);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void closeInputKeyboard() {
-        handler_.postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ReleaseSelectTimeSelfAct_.super.closeInputKeyboard();
-            }
-
-        }
-        , 200L);
     }
 
     @Override
@@ -204,13 +176,13 @@ public final class ReleaseSelectTimeSelfAct_
     }
 
     @Override
-    public void showToast(final String arg0) {
+    public void onApiException(final ApiException ex) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSelectTimeSelfAct_.super.showToast(arg0);
+                ReleaseSelectTimeSelfAct_.super.onApiException(ex);
             }
 
         }
@@ -232,13 +204,41 @@ public final class ReleaseSelectTimeSelfAct_
     }
 
     @Override
-    public void fullScreen(final boolean arg0) {
+    public void showLoading(final String tip) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                ReleaseSelectTimeSelfAct_.super.fullScreen(arg0);
+                ReleaseSelectTimeSelfAct_.super.showLoading(tip);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void closeInputKeyboard() {
+        handler_.postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSelectTimeSelfAct_.super.closeInputKeyboard();
+            }
+
+        }
+        , 200L);
+    }
+
+    @Override
+    public void showToast(final String content) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ReleaseSelectTimeSelfAct_.super.showToast(content);
             }
 
         }

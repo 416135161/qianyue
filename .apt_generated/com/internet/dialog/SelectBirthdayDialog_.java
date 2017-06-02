@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
-import com.internet.turnright.b.R.layout;
+import com.internet.qianyue.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -64,24 +64,9 @@ public final class SelectBirthdayDialog_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        datePicker = ((DatePicker) hasViews.findViewById(com.internet.turnright.b.R.id.datePicker));
+        datePicker = ((DatePicker) hasViews.findViewById(com.internet.qianyue.R.id.datePicker));
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.text_qx);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        SelectBirthdayDialog_.this.onImage2Click();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.view);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.view);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -96,7 +81,22 @@ public final class SelectBirthdayDialog_
             }
         }
         {
-            View view = hasViews.findViewById(com.internet.turnright.b.R.id.text_qd);
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.text_qx);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        SelectBirthdayDialog_.this.onImage2Click();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.internet.qianyue.R.id.text_qd);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 

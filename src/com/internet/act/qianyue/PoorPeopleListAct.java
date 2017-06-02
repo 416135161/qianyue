@@ -34,8 +34,9 @@ import com.internet.http.api.ApiException;
 import com.internet.http.api.ApiManager;
 import com.internet.http.data.post.GetSiteListPost;
 import com.internet.http.data.response.GetSiteListResponse;
+import com.internet.http.data.vo.PoorPeopleVO;
 import com.internet.http.data.vo.SiteVO;
-import com.internet.turnright.b.R;
+import com.internet.qianyue.R;
 import com.internet.util.ToastUtil;
 import com.internet.util.Utils;
 import com.internet.view.HeaderView;
@@ -47,11 +48,9 @@ public class PoorPeopleListAct extends BasicActivity implements
 
 	@ViewById
 	HeaderView view_header;
-	@ViewById
-	SearchSiteView layout_search;
 
 	@ViewById
-	TextView text_search;
+	ImageView image_search;
 
 	@ViewById
 	EditText edit_search;
@@ -77,21 +76,16 @@ public class PoorPeopleListAct extends BasicActivity implements
 
 		listView.setAdapter(adapter);
 		listView.setOnScrollListener(this);
-
+		
+		
+		adapter.addItem(new PoorPeopleVO());
+		adapter.addItem(new PoorPeopleVO());
+		adapter.addItem(new PoorPeopleVO());
+		adapter.addItem(new PoorPeopleVO());
 		getSiteList();
 	}
 
-	@Click(R.id.view_search)
-	void clickSearch() {
-		layout_search.setVisibility(View.VISIBLE);
-	}
-
-	@Click(R.id.text_cancel)
-	void clickSearchCancel() {
-		layout_search.setVisibility(View.GONE);
-	}
-
-	@Click(R.id.text_search)
+	@Click(R.id.image_search)
 	void clickEnsureSearch() {
 		String keyword = edit_search.getEditableText().toString();
 		if (TextUtils.isEmpty(keyword)) {
@@ -99,21 +93,10 @@ public class PoorPeopleListAct extends BasicActivity implements
 			return;
 		}
 		mKeyword = keyword;
-		layout_search.setVisibility(View.GONE);
 		page = 1;
 		hasMore = true;
 		adapter.clearList();
 		getSiteList();
-	}
-
-	@Override
-	public void onBackPressed() {
-		// TODO Auto-generated method stub
-		if (layout_search.getVisibility() == View.VISIBLE) {
-			layout_search.setVisibility(View.GONE);
-			return;
-		}
-		super.onBackPressed();
 	}
 
 	@Background
@@ -141,46 +124,28 @@ public class PoorPeopleListAct extends BasicActivity implements
 
 	@UiThread
 	void freshList(GetSiteListResponse response) {
-		if (response != null && response.getResult() != null
-				&& response.getResult().getResult() != null) {
-			if (response.getResult().getResult().size() >= page) {
-				++page;
-			} else {
-				hasMore = false;
-			}
-			adapter.addList(response.getResult().getResult());
-
-		} else {
-			hasMore = false;
-		}
-	}
-
-	@Click(R.id.tv_ok)
-	void click(View v) {
-
-		if (selectSite != null) {
-			Intent intent = new Intent();
-			intent.putExtra("siteName", selectSite.siteName);
-			intent.putExtra("siteId", selectSite.id);
-
-			post(intent);
-
-			finish();
-		} else {
-
-			ToastUtil.showShortToast(this, "请先选择练习场地！");
-		}
-
+//		if (response != null && response.getResult() != null
+//				&& response.getResult().getResult() != null) {
+//			if (response.getResult().getResult().size() >= page) {
+//				++page;
+//			} else {
+//				hasMore = false;
+//			}
+//			adapter.addList(response.getResult().getResult());
+//
+//		} else {
+//			hasMore = false;
+//		}
 	}
 
 	class SelectSiteAdapter extends BaseAdapter {
 
-		private List<SiteVO> list;
+		private List<PoorPeopleVO> list;
 		private Context context;
 
 		public SelectSiteAdapter(Context context) {
 			super();
-			this.list = new ArrayList<SiteVO>();
+			this.list = new ArrayList<PoorPeopleVO>();
 			this.context = context;
 		}
 
@@ -209,17 +174,16 @@ public class PoorPeopleListAct extends BasicActivity implements
 			notifyDataSetChanged();
 		}
 
-		public void addList(List<SiteVO> list) {
+		public void addList(List<PoorPeopleVO> list) {
 
 			this.list.addAll(list);
-			Collections.sort(this.list);
 			notifyDataSetChanged();
 		}
 
-		public void addItem(SiteVO bean) {
+		public void addItem(PoorPeopleVO bean) {
 
 			if (list == null) {
-				list = new ArrayList<SiteVO>();
+				list = new ArrayList<PoorPeopleVO>();
 			}
 
 			list.add(bean);
@@ -230,50 +194,20 @@ public class PoorPeopleListAct extends BasicActivity implements
 
 			if (view == null) {
 				view = LayoutInflater.from(context).inflate(
-						R.layout.list_item_select_site, null);
+						R.layout.view_poor_people_item, null);
 			}
 
-			TextView tv_name = (TextView) view.findViewById(R.id.tv_name);
-			TextView tv_address = (TextView) view.findViewById(R.id.tv_address);
-			TextView tv_distance = (TextView) view
-					.findViewById(R.id.tv_distance);
-			ImageView iv_pic = (ImageView) view.findViewById(R.id.iv_pic);
-			final CheckBox cb = (CheckBox) view.findViewById(R.id.cb);
+			TextView tv_0 = (TextView) view.findViewById(R.id.text0);
+			TextView tv_1 = (TextView) view.findViewById(R.id.text1);
+			TextView tv_2 = (TextView) view.findViewById(R.id.text2);
 
-			final SiteVO bean = list.get(position);
-
-			tv_address.setText(bean.siteAddr);
-
-			tv_name.setText(bean.siteName);
-
-			tv_distance.setText(Utils.transferDot2(bean.distance + "") + "km");
-
-			Glide.with(context).load(bean.siteAvatar).centerCrop()
-					.placeholder(R.drawable.empty).crossFade().into(iv_pic);
-
-			if (bean.isSelect) {
-
-				cb.setChecked(true);
-			} else {
-				cb.setChecked(false);
-			}
-
+//			tv_0.setText("");
+//			tv_1.setText("");
+//			tv_2.setText("");
 			view.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View arg0) {
-
-					for (SiteVO site : list) {
-						site.isSelect = false;
-						selectSite = null;
-					}
-					if (!cb.isChecked()) {
-						bean.isSelect = true;
-						selectSite = bean;
-					}
-
-					notifyDataSetChanged();
-					
 					PoorPeopleDetailAct_.intent(context).start();
 
 				}
