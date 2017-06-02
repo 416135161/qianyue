@@ -2348,3 +2348,4 @@
 17:15:08.174 [Worker-132] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.internet.act.qianyue.PoorPeopleDetailAct_
 17:15:08.179 [Worker-132] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 24 ms], [Extract Annotations = 7 ms], [Generate Sources = 6 ms], [Find R Classes = 4 ms], [Extract Manifest = 3 ms], [Validate Annotations = 3 ms], [Process Annotations = 1 ms], 
 17:15:08.179 [Worker-132] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+09:08:07.10 [Worker-2] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
